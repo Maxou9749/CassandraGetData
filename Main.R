@@ -12,7 +12,7 @@ library(rLE2P)
 tr <- CassandraGetTransactionList()
 
 # Creation des matrices de stockage
-Base_de_donnees <- matrix(nrow = 610, ncol = 5)
+Base_de_donnees <- matrix(nrow = 1221, ncol = 5)
 L <- matrix()
 
 # Recuperation des meta pour chaque capteur
@@ -33,10 +33,14 @@ for (j in seq(1,27)) {
   }
 }
 
+Fichier_Base_de_donnees <- matrix(nrow = 620, ncol = 5)
+Fichier_Base_de_donnees <- Base_de_donnees[1:620,1:5]
+Fichier_transaction <- as.matrix(tr)
 
 # ------- Ecriture des meta dans un fichier externe -------
-write.table(Base_de_donnees, "/home/maxime/Bureau/Base_de_donnees.txt", sep=";")
+write.table(Fichier_Base_de_donnees, "/home/maxime/Bureau/Base_de_donnees.txt", sep=";")
 write.table(L, "/home/maxime/Bureau/nombre_de_capteur_par_transaction.txt", sep=";")
+write.table(Fichier_transaction, "/home/maxime/Bureau/Liste de transaction de Cassandra.txt", sep=";")
 
 
 # Classification des capteurs par zones pluviales
