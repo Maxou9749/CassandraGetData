@@ -1,0 +1,80 @@
+Patm_Avg	1465986548	Saint Leu
+FD_Avg	1465986548	Saint Leu
+battVolt_Avg	1465986548	Saint Leu
+Rain_Avg	1465986548	Saint Leu
+Text_Avg	1465986548	Saint Leu
+TinDL_Avg	1465986548	Saint Leu
+WD_StdDev	1465986548	Saint Leu
+FG_Avg	1465986548	Saint Leu
+Hamount_Avg	1465986548	Saint Leu
+RECORD	1465986548	Saint Leu
+Tenc_Avg	1465986548	Saint Leu
+RH_Avg	1465986548	Saint Leu
+WS_Mean	1465986548	Saint Leu
+FDnum_Avg	1465986548	Saint Leu
+WD_MeanUnitVector	1465986548	Saint Leu
+FGnum_Avg	1465986548	Saint Leu
+FGnum_Avg	1465986253	Saint Andre
+Tenc_Avg	1465986253	Saint Andre
+TinDL_Avg	1465986253	Saint Andre
+RH_Avg	1465986253	Saint Andre
+FDnum_Avg	1465986253	Saint Andre
+Hamount_Avg	1465986253	Saint Andre
+Text_Avg	1465986253	Saint Andre
+battVolt_Avg	1465986253	Saint Andre
+WD_MeanUnitVector	1465986253	Saint Andre
+FG_Avg	1465986253	Saint Andre
+Rain_Avg	1465986253	Saint Andre
+Patm_Avg	1465986253	Saint Andre
+FD_Avg	1465986253	Saint Andre
+RECORD	1465986253	Saint Andre
+WD_StdDev	1465986253	Saint Andre
+WS_Mean	1465986253	Saint Andre
+WD_StdDev	1465989663	Saint Pierre
+FG_Avg	1465989663	Saint Pierre
+Patm_Avg	1465989663	Saint Pierre
+FD_Avg	1465989663	Saint Pierre
+Text_Avg	1465989663	Saint Pierre
+TinDL_Avg	1465989663	Saint Pierre
+RECORD	1465989663	Saint Pierre
+WS_Mean	1465989663	Saint Pierre
+RH_Avg	1465989663	Saint Pierre
+WD_MeanUnitVector	1465989663	Saint Pierre
+battVolt_Avg	1465989663	Saint Pierre
+Hamount_Avg	1465989663	Saint Pierre
+FGnum_Avg	1465989663	Saint Pierre
+FDnum_Avg	1465989663	Saint Pierre
+Rain_Avg	1465989663	Saint Pierre
+Tenc_Avg	1465989663	Saint Pierre
+FGnum_Avg	1465986423	Moufia Bois de Nefles
+FG_Avg	1465986423	Moufia Bois de Nefles
+WD_StdDev	1465986423	Moufia Bois de Nefles
+battVolt_Avg	1465986423	Moufia Bois de Nefles
+WS_Mean	1465986423	Moufia Bois de Nefles
+Patm_Avg	1465986423	Moufia Bois de Nefles
+WD_MeanUnitVector	1465986423	Moufia Bois de Nefles
+Tenc_Avg	1465986423	Moufia Bois de Nefles
+RECORD	1465986423	Moufia Bois de Nefles
+RH_Avg	1465986423	Moufia Bois de Nefles
+FD_Avg	1465986423	Moufia Bois de Nefles
+Text_Avg	1465986423	Moufia Bois de Nefles
+FDnum_Avg	1465986423	Moufia Bois de Nefles
+Hamount_Avg	1465986423	Moufia Bois de Nefles
+Rain_Avg	1465986423	Moufia Bois de Nefles
+TinDL_Avg	1465986423	Moufia Bois de Nefles
+WD_StdDev	1465986484	La Possession
+FGnum_Avg	1465986484	La Possession
+FG_Avg	1465986484	La Possession
+FD_Avg	1465986484	La Possession
+Text_Avg	1465986484	La Possession
+Tenc_Avg	1465986484	La Possession
+Patm_Avg	1465986484	La Possession
+WS_Mean	1465986484	La Possession
+Hamount_Avg	1465986484	La Possession
+Rain_Avg	1465986484	La Possession
+WD_MeanUnitVector	1465986484	La Possession
+RH_Avg	1465986484	La Possession
+FDnum_Avg	1465986484	La Possession
+RECORD	1465986484	La Possession
+battVolt_Avg	1465986484	La Possession
+TinDL_Avg	1465986484	La Possession
