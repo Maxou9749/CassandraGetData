@@ -1,21 +1,17 @@
-# ---------------------------------------------------------
+
 #                      Maxime ROUSSEAU
-#         Interroger la base de donnees CASSANDRA
-#                        08/02/2018
-# ---------------------------------------------------------
+#     Recuperation des MetaData de tout capteur de CASSANDRA
+#                        21/02/2018
+
 
 # Chargement de la library rLE2P
 library(rLE2P)
 
 
-# --- Recuperer de toutes les metadonnees des capteurs ----
+# --- Recuperer de toutes les metadonnees des capteurs de CASSANDRA ----
 tr <- CassandraGetTransactionList()
-
-# Creation des matrices de stockage
 Base_de_donnees <- matrix(nrow = 1221, ncol = 5)
 L <- matrix()
-
-# Recuperation des meta pour chaque capteur
 for (j in seq(1,27)) {
   myTr <- as.character(tr[j,1])
   ntr <- CassandraGetSensorFromTransaction(myTr)
@@ -38,12 +34,14 @@ Fichier_Base_de_donnees <- Base_de_donnees[1:620,1:5]
 Fichier_transaction <- as.matrix(tr)
 
 # ------- Ecriture des meta dans un fichier externe -------
-write.table(Fichier_Base_de_donnees, "/home/maxime/Bureau/Base_de_donnees.txt", sep=";")
-write.table(L, "/home/maxime/Bureau/nombre_de_capteur_par_transaction.txt", sep=";")
-write.table(Fichier_transaction, "/home/maxime/Bureau/Liste de transaction de Cassandra.txt", sep=";")
+setwd(dir = "~")
+dir.create(path = "MetaData")
+write.table(Fichier_Base_de_donnees, "~/MetaData/Metadata_de_tous_les_capteurs_de_CASSANDRA.txt", sep=";")
+write.table(L, "~/MetaData/Nombre_de_capteur_par_transaction.txt", sep=";")
+write.table(Fichier_transaction, "~/MetaData/Liste de transaction de Cassandra.txt", sep=";")
 
 
-# Classification des capteurs par zones pluviales
+# ---- Classification des capteurs par zones pluviales ----
 #Zone1 <- data.frame(c(tr[10,], tr[25,], tr[19,], tr[2,], tr[5,], tr[11,]))
 #Zone2 <- data.frame(c(tr[3,], tr[13,], tr[15,], tr[1,], tr[9,], tr[8,], tr[14,], tr[26,], tr[16,]))
 #Zone3 <- "vide"
