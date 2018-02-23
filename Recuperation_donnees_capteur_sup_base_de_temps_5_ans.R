@@ -1,7 +1,7 @@
 
-#                              Maxime ROUSSEAU
-#    Recuperation des donnees de rayonnement solaire (Global et Diffus) sur 5 ans
-#                                21/02/2018
+#                               Maxime ROUSSEAU
+#     Recuperation des donnees de rayonnement solaire (Global et Diffus) sur 5 ans
+#                                 21/02/2018
 
 
 # Chargement de la library rLE2P
