@@ -27,7 +27,7 @@ dir.create(path = "Moyennes")
 setwd(dir = "Moyennes")
 
 
-# ---- Novembre ----
+# ---- Moyenne ----
 setwd(dir = "~/Base de données/")
 
 for (j in seq(1,12)) {
@@ -48,61 +48,48 @@ for (j in seq(1,12)) {
       lecture_list_SL_D <- read.table(file = "Diffus_Saint_Leu.txt", sep = ";")
       lecture_list_SP_D <- read.table(file = "Diffus_Saint_Pierre.txt", sep = ";")
       
-      # Selection de la colonne numero 2 (Donnees solaire)
-      select_col_LP_G <- lecture_list_LP_G[2]
-      select_col_MBDN_G <- lecture_list_MBDN_G[2]
-      select_col_SA_G <- lecture_list_SA_G[2]
-      select_col_SL_G <- lecture_list_SL_G[2]
-      select_col_SP_G <- lecture_list_SP_G[2]
-      select_col_LP_D <- lecture_list_LP_D[2]
-      select_col_MBDN_D <- lecture_list_MBDN_D[2]
-      select_col_SA_D <- lecture_list_SA_D[2]
-      select_col_SL_D <- lecture_list_SL_D[2]
-      select_col_SP_D <- lecture_list_SP_D[2]
-
-      # Conversion des listes en format numerique
-      conv_num_LP_G <- as.numeric(unlist(select_col_LP_G))
-      conv_num_MBDN_G <- as.numeric(unlist(select_col_MBDN_G))
-      conv_num_SA_G <- as.numeric(unlist(select_col_SA_G))
-      conv_num_SL_G <- as.numeric(unlist(select_col_SL_G))
-      conv_num_SP_G <- as.numeric(unlist(select_col_SP_G))
-      conv_num_LP_D <- as.numeric(unlist(select_col_LP_D))
-      conv_num_MBDN_D <- as.numeric(unlist(select_col_MBDN_D))
-      conv_num_SA_D <- as.numeric(unlist(select_col_SA_D))
-      conv_num_SL_D <- as.numeric(unlist(select_col_SL_D))
-      conv_num_SP_D <- as.numeric(unlist(select_col_SP_D))
+      # Omission des valeurs de rayonnement en dessous d'un certain seuil
+      for (i in seq(1,nrow(lecture_list_LP_G))) {if (lecture_list_LP_G[i,2] < 20) {lecture_list_LP_G[i,2] <- NA}}
+        lecture_list_LP_G <- na.omit(lecture_list_LP_G)
+      for (i in seq(1,nrow(lecture_list_MBDN_G))) {if (lecture_list_MBDN_G[i,2] < 20) {lecture_list_MBDN_G[i,2] <- NA}}
+        lecture_list_MBDN_G <- na.omit(lecture_list_MBDN_G)
+      for (i in seq(1,nrow(lecture_list_SA_G))) {if (lecture_list_SA_G[i,2] < 20) {lecture_list_SA_G[i,2] <- NA}}
+        lecture_list_SA_G <- na.omit(lecture_list_SA_G)
+      for (i in seq(1,nrow(lecture_list_SL_G))) {if (lecture_list_SL_G[i,2] < 20) {lecture_list_SL_G[i,2] <- NA}}
+        lecture_list_SL_G <- na.omit(lecture_list_SL_G)
+      for (i in seq(1,nrow(lecture_list_SP_G))) {if (lecture_list_SP_G[i,2] < 20) {lecture_list_SP_G[i,2] <- NA}}
+        lecture_list_SP_G <- na.omit(lecture_list_SP_G)
+      for (i in seq(1,nrow(lecture_list_LP_D))) {if (lecture_list_LP_D[i,2] < 20) {lecture_list_LP_D[i,2] <- NA}}
+        lecture_list_LP_D <- na.omit(lecture_list_LP_D)
+      for (i in seq(1,nrow(lecture_list_MBDN_D))) {if (lecture_list_MBDN_D[i,2] < 20) {lecture_list_MBDN_D[i,2] <- NA}}
+        lecture_list_MBDN_D <- na.omit(lecture_list_MBDN_D)
+      for (i in seq(1,nrow(lecture_list_SA_D))) {if (lecture_list_SA_D[i,2] < 20) {lecture_list_SA_D[i,2] <- NA}}
+        lecture_list_SA_D <- na.omit(lecture_list_SA_D)
+      for (i in seq(1,nrow(lecture_list_SL_D))) {if (lecture_list_SL_D[i,2] < 20) {lecture_list_SL_D[i,2] <- NA}}
+        lecture_list_SL_D <- na.omit(lecture_list_SL_D)
+      for (i in seq(1,nrow(lecture_list_SP_D))) {if (lecture_list_SP_D[i,2] < 20) {lecture_list_SP_D[i,2] <- NA}}
+        lecture_list_SP_D <- na.omit(lecture_list_SP_D)
       
-      # Variable de stockage 
-      Donnees_LP_G <- c(Donnees_LP_G, conv_num_LP_G)
-      Donnees_MBDN_G <- c(Donnees_MBDN_G, conv_num_MBDN_G)
-      Donnees_SA_G <- c(Donnees_SA_G, conv_num_SA_G)
-      Donnees_SL_G <- c(Donnees_SL_G, conv_num_SL_G)
-      Donnees_SP_G <- c(Donnees_SP_G, conv_num_SP_G)
-      Donnees_LP_D <- c(Donnees_LP_D, conv_num_LP_D)
-      Donnees_MBDN_D <- c(Donnees_MBDN_D, conv_num_MBDN_D)
-      Donnees_SA_D <- c(Donnees_SA_D, conv_num_SA_D)
-      Donnees_SL_D <- c(Donnees_SL_D, conv_num_SL_D)
-      Donnees_SP_D <- c(Donnees_SP_D, conv_num_SP_D)
-      
-      
-      # Stockage des valeurs moyennes 
-      moy_LP_G <- mean(x = Donnees_LP_G)
-      moy_MBDN_G <- mean(x = Donnees_MBDN_G)
-      moy_SA_G <- mean(x = Donnees_SA_G)
-      moy_SL_G <- mean(x = Donnees_SL_G)
-      moy_SP_G <- mean(x = Donnees_SP_G)
-      moy_LP_D <- mean(x = Donnees_LP_D)
-      moy_MBDN_D <- mean(x = Donnees_MBDN_D)
-      moy_SA_D <- mean(x = Donnees_SA_D)
-      moy_SL_D <- mean(x = Donnees_SL_D)
-      moy_SP_D <- mean(x = Donnees_SP_D)
+      # Moyenne
+      moy_LP_G <- mean(x = lecture_list_LP_G$value)
+      moy_MBDN_G <- mean(x = lecture_list_MBDN_G$value)
+      moy_SA_G <- mean(x = lecture_list_SA_G$value)
+      moy_SL_G <- mean(x = lecture_list_SL_G$value)
+      moy_SP_G <- mean(x = lecture_list_SP_G$value)
+      moy_LP_D <- mean(x = lecture_list_LP_D$value)
+      moy_MBDN_D <- mean(x = lecture_list_MBDN_D$value)
+      moy_SA_D <- mean(x = lecture_list_SA_D$value)
+      moy_SL_D <- mean(x = lecture_list_SL_D$value)
+      moy_SP_D <- mean(x = lecture_list_SP_D$value)
       
       # Ecriture dans un fichier externe
       setwd(dir = "~/Base de données/Moyennes")
-      Moyenne_G <- c(moy_LP_G, moy_MBDN_G, moy_SA_G, moy_SL_G, moy_SP_G)
-      Moyenne_D <- c(moy_LP_D, moy_MBDN_D, moy_SA_D, moy_SL_D, moy_SP_D)
-      write.table(x = Moyenne_G, file = paste("Moy_Ray_Global_", mois[j], ".txt", sep = ""))
-      write.table(x = Moyenne_D, file = paste("Moy_Ray_Diffus_", mois[j], ".txt", sep = ""))
+      Moy_G <- c(moy_LP_G, moy_MBDN_G, moy_SA_G, moy_SL_G, moy_SP_G)
+      Moy_D <- c(moy_LP_D, moy_MBDN_D, moy_SA_D, moy_SL_D, moy_SP_D)
+      Moy_G <- as.data.frame(x = Moy_G)
+      Moy_D <- as.data.frame(x = Moy_D)
+      fusion <- c(Moy_G, Moy_D)
+      write.table(x = fusion, file = paste("Moy_Ray_Global_", mois[j], ".txt", sep = ""), col.names = TRUE)
       
     }
     setwd(dir = "~/Base de données/")
@@ -118,4 +105,6 @@ for (j in seq(1,12)) {
   Donnees_SA_D <- 0
   Donnees_SL_D <- 0
   Donnees_SP_D <- 0
+  Moy_G <- 0
+  Moy_D <- 0
 }
