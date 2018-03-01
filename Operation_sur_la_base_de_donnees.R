@@ -92,6 +92,7 @@ for (j in seq(1,12)) {
       list_SA_D <- c(list_SA_D,omit_list_SA_D)
       list_SL_D <- c(list_SL_D,omit_list_SL_D)
       list_SP_D <- c(list_SP_D,omit_list_SP_D)
+      setwd(dir = "~/Base de données/")
     }
     setwd(dir = "~/Base de données/")
   }
@@ -139,4 +140,5 @@ for (j in seq(1,12)) {
   list_SA_D <- 0
   list_SL_D <- 0
   list_SP_D <- 0
+  setwd(dir = "~/Base de données/")
 }
