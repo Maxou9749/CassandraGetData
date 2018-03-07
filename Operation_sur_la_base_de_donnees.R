@@ -42,7 +42,7 @@ dir.create(path = "Moyennes")
 setwd(dir = "Moyennes")
 
 
-# ---- Moyenne ----
+# ---- Operation sur la base de donnees ----
 setwd(dir = "~/Base de données/")
 
 for (j in seq(1,12)) {
