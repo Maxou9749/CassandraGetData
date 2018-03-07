@@ -3,6 +3,10 @@
 #     Operation sur la base de donnees
 #                 21/02/2018
 
+
+heure_lim_inf <- 6
+heure_lim_sup <- 20
+
 # ---- Definition des variables utilisees ----
 jr_mois <- c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 mois <- c("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre")
@@ -59,26 +63,95 @@ for (j in seq(1,12)) {
       lecture_list_SL_D <- read.table(file = "Diffus_Saint_Leu.txt", sep = ";")
       lecture_list_SP_D <- read.table(file = "Diffus_Saint_Pierre.txt", sep = ";")
       
-      # Omission des valeurs de rayonnement en dessous d'un certain seuil
-      for (k in seq(1,nrow(lecture_list_LP_G))) {if (lecture_list_LP_G$value[k] < 20) {lecture_list_LP_G$value[k] <- NA}}
+      # Omission des valeurs de rayonnement en fonction de l'heure
+      for (k in seq(1,nrow(lecture_list_LP_G))) {
+        A <- as.numeric(substring(lecture_list_LP_G$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_LP_G$date[k] <- NA
+          lecture_list_LP_G$value[k] <- NA
+        }
+      }
       omit_list_LP_G <- na.omit(lecture_list_LP_G$value)
-      for (l in seq(1,nrow(lecture_list_MBDN_G))) {if (lecture_list_MBDN_G$value[l] < 20) {lecture_list_MBDN_G$value[l] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_MBDN_G))) {
+        A <- as.numeric(substring(lecture_list_MBDN_G$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_MBDN_G$date[k] <- NA
+          lecture_list_MBDN_G$value[k] <- NA
+        }
+      }
       omit_list_MBDN_G <- na.omit(lecture_list_MBDN_G$value)
-      for (m in seq(1,nrow(lecture_list_SA_G))) {if (lecture_list_SA_G$value[m] < 20) {lecture_list_SA_G$value[m] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_SA_G))) {
+        A <- as.numeric(substring(lecture_list_SA_G$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_SA_G$date[k] <- NA
+          lecture_list_SA_G$value[k] <- NA
+        }
+      }
       omit_list_SA_G <- na.omit(lecture_list_SA_G$value)
-      for (n in seq(1,nrow(lecture_list_SL_G))) {if (lecture_list_SL_G$value[n] < 20) {lecture_list_SL_G$value[n] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_SL_G))) {
+        A <- as.numeric(substring(lecture_list_SL_G$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_SL_G$date[k] <- NA
+          lecture_list_SL_G$value[k] <- NA
+        }
+      }
       omit_list_SL_G <- na.omit(lecture_list_SL_G$value)
-      for (o in seq(1,nrow(lecture_list_SP_G))) {if (lecture_list_SP_G$value[o] < 20) {lecture_list_SP_G$value[o] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_SP_G))) {
+        A <- as.numeric(substring(lecture_list_SP_G$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_SP_G$date[k] <- NA
+          lecture_list_SP_G$value[k] <- NA
+        }
+      }
       omit_list_SP_G <- na.omit(lecture_list_SP_G$value)
-      for (p in seq(1,nrow(lecture_list_LP_D))) {if (lecture_list_LP_D$value[p] < 20) {lecture_list_LP_D$value[p] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_LP_D))) {
+        A <- as.numeric(substring(lecture_list_LP_D$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_LP_D$date[k] <- NA
+          lecture_list_LP_D$value[k] <- NA
+        }
+      }
       omit_list_LP_D <- na.omit(lecture_list_LP_D$value)
-      for (q in seq(1,nrow(lecture_list_MBDN_D))) {if (lecture_list_MBDN_D$value[q] < 20) {lecture_list_MBDN_D$value[q] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_MBDN_D))) {
+        A <- as.numeric(substring(lecture_list_MBDN_D$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_MBDN_D$date[k] <- NA
+          lecture_list_MBDN_D$value[k] <- NA
+        }
+      }
       omit_list_MBDN_D <- na.omit(lecture_list_MBDN_D$value)
-      for (r in seq(1,nrow(lecture_list_SA_D))) {if (lecture_list_SA_D$value[r] < 20) {lecture_list_SA_D$value[r] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_SA_D))) {
+        A <- as.numeric(substring(lecture_list_SA_D$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_SA_D$date[k] <- NA
+          lecture_list_SA_D$value[k] <- NA
+        }
+      }
       omit_list_SA_D <- na.omit(lecture_list_SA_D$value)
-      for (s in seq(1,nrow(lecture_list_SL_D))) {if (lecture_list_SL_D$value[s] < 20) {lecture_list_SL_D$value[s] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_SL_D))) {
+        A <- as.numeric(substring(lecture_list_SL_D$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_SL_D$date[k] <- NA
+          lecture_list_SL_D$value[k] <- NA
+        }
+      }
       omit_list_SL_D <- na.omit(lecture_list_SL_D$value)
-      for (t in seq(1,nrow(lecture_list_SP_D))) {if (lecture_list_SP_D$value[t] < 20) {lecture_list_SP_D$value[t] <- NA}}
+      
+      for (k in seq(1,nrow(lecture_list_SP_D))) {
+        A <- as.numeric(substring(lecture_list_SP_D$date[k], 12, 13))
+        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
+          lecture_list_SP_D$date[k] <- NA
+          lecture_list_SP_D$value[k] <- NA
+        }
+      }
       omit_list_SP_D <- na.omit(lecture_list_SP_D$value)
       
       # Mémoire

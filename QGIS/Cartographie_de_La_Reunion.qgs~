@@ -18,36 +18,41 @@
   </projectCrs>
   <layer-tree-group>
     <customproperties/>
-    <layer-tree-layer providerKey="ogr" checked="Qt::Checked" expanded="1" source="../Script_Pauline_contour_Reunion/cretes/crete.shp" id="crete_cbb70c9a_10f8_49fd_882b_b3fe85ceb538" name="crete">
+    <layer-tree-layer expanded="1" providerKey="ogr" name="Quartiers" checked="Qt::Checked" id="Quartiers_c3759090_1613_4714_ae88_14f6e70c84bc" source="./Quartiers.shp">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer providerKey="ogr" checked="Qt::Checked" expanded="1" source="../Script_Pauline_contour_Reunion/communes/COMMUNE.shp" id="COMMUNE_76467d87_b775_43b1_9d1b_f8ebc58771ad" name="COMMUNE">
+    <layer-tree-layer expanded="1" providerKey="ogr" name="Cretes" checked="Qt::Checked" id="Cretes_39791ae8_e084_4b43_887a_a0a043a356cc" source="./Cretes.shp">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer providerKey="ogr" checked="Qt::Checked" expanded="1" source="../Script_Pauline_contour_Reunion/departement/DEPARTEMENT.shp" id="DEPARTEMENT_36dc8e04_d244_497b_a46e_f7900b8c8817" name="DEPARTEMENT">
+    <layer-tree-layer expanded="1" providerKey="ogr" name="Communes" checked="Qt::Checked" id="Communes_10a10d57_2d3e_41d6_af91_486093f28b68" source="./Communes.shp">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" providerKey="ogr" name="Contours" checked="Qt::Checked" id="Contours_bc8e1584_68c7_4ea8_a7c7_c2234c12fb07" source="./Contours.shp">
       <customproperties/>
     </layer-tree-layer>
     <custom-order enabled="0">
-      <item>COMMUNE_76467d87_b775_43b1_9d1b_f8ebc58771ad</item>
-      <item>DEPARTEMENT_36dc8e04_d244_497b_a46e_f7900b8c8817</item>
-      <item>crete_cbb70c9a_10f8_49fd_882b_b3fe85ceb538</item>
+      <item>Quartiers_c3759090_1613_4714_ae88_14f6e70c84bc</item>
+      <item>Cretes_39791ae8_e084_4b43_887a_a0a043a356cc</item>
+      <item>Communes_10a10d57_2d3e_41d6_af91_486093f28b68</item>
+      <item>Contours_bc8e1584_68c7_4ea8_a7c7_c2234c12fb07</item>
     </custom-order>
   </layer-tree-group>
-  <snapping-settings type="1" mode="2" enabled="0" unit="1" intersection-snapping="0" tolerance="12">
+  <snapping-settings type="1" enabled="0" tolerance="12" intersection-snapping="0" mode="2" unit="1">
     <individual-layer-settings>
-      <layer-setting type="1" enabled="0" units="1" tolerance="12" id="COMMUNE_76467d87_b775_43b1_9d1b_f8ebc58771ad"/>
-      <layer-setting type="1" enabled="0" units="1" tolerance="12" id="crete_cbb70c9a_10f8_49fd_882b_b3fe85ceb538"/>
-      <layer-setting type="1" enabled="0" units="1" tolerance="12" id="DEPARTEMENT_36dc8e04_d244_497b_a46e_f7900b8c8817"/>
+      <layer-setting type="1" units="1" enabled="0" tolerance="12" id="Contours_bc8e1584_68c7_4ea8_a7c7_c2234c12fb07"/>
+      <layer-setting type="1" units="1" enabled="0" tolerance="12" id="Communes_10a10d57_2d3e_41d6_af91_486093f28b68"/>
+      <layer-setting type="1" units="1" enabled="0" tolerance="12" id="Cretes_39791ae8_e084_4b43_887a_a0a043a356cc"/>
+      <layer-setting type="1" units="1" enabled="0" tolerance="12" id="Quartiers_c3759090_1613_4714_ae88_14f6e70c84bc"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations/>
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>305486.22470081644132733</xmin>
-      <ymin>7629448.47970559727400541</ymin>
-      <xmax>419938.00029167020693421</xmax>
-      <ymax>7702329.97771743964403868</ymax>
+      <xmin>305883.45535442227264866</xmin>
+      <ymin>7630444.2819994417950511</ymin>
+      <xmax>420335.23094527603825554</xmax>
+      <ymax>7703325.78001129906624556</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -65,38 +70,43 @@
     <rendermaptile>0</rendermaptile>
   </mapcanvas>
   <legend updateDrawingOrder="true">
-    <legendlayer checked="Qt::Checked" drawingOrder="-1" open="true" showFeatureCount="0" name="crete">
-      <filegroup hidden="false" open="true">
-        <legendlayerfile isInOverview="0" visible="1" layerid="crete_cbb70c9a_10f8_49fd_882b_b3fe85ceb538"/>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" checked="Qt::Checked" name="Quartiers" open="true">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Quartiers_c3759090_1613_4714_ae88_14f6e70c84bc" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer checked="Qt::Checked" drawingOrder="-1" open="true" showFeatureCount="0" name="COMMUNE">
-      <filegroup hidden="false" open="true">
-        <legendlayerfile isInOverview="0" visible="1" layerid="COMMUNE_76467d87_b775_43b1_9d1b_f8ebc58771ad"/>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" checked="Qt::Checked" name="Cretes" open="true">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Cretes_39791ae8_e084_4b43_887a_a0a043a356cc" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer checked="Qt::Checked" drawingOrder="-1" open="true" showFeatureCount="0" name="DEPARTEMENT">
-      <filegroup hidden="false" open="true">
-        <legendlayerfile isInOverview="0" visible="1" layerid="DEPARTEMENT_36dc8e04_d244_497b_a46e_f7900b8c8817"/>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" checked="Qt::Checked" name="Communes" open="true">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Communes_10a10d57_2d3e_41d6_af91_486093f28b68" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" checked="Qt::Checked" name="Contours" open="true">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Contours_bc8e1584_68c7_4ea8_a7c7_c2234c12fb07" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
   <mapViewDocks/>
   <mapViewDocks3D/>
   <projectlayers>
-    <maplayer type="vector" simplifyDrawingHints="1" simplifyAlgorithm="0" minScale="1e+8" maxScale="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" geometry="Polygon" simplifyMaxScale="1" simplifyDrawingTol="1" autoRefreshTime="0" labelsEnabled="1" simplifyLocal="1" refreshOnNotifyEnabled="0" hasScaleBasedVisibilityFlag="0" readOnly="0">
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" type="vector" maxScale="0" autoRefreshEnabled="0" geometry="Polygon" simplifyAlgorithm="0" simplifyMaxScale="1" labelsEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" readOnly="0" simplifyLocal="1" refreshOnNotifyMessage="" simplifyDrawingHints="1" simplifyDrawingTol="1">
       <extent>
         <xmin>320465.50000000221189111</xmin>
         <ymin>7636932.3999997191131115</ymin>
         <xmax>364935.70000000600703061</xmax>
         <ymax>7690971.49999974481761456</ymax>
       </extent>
-      <id>COMMUNE_76467d87_b775_43b1_9d1b_f8ebc58771ad</id>
-      <datasource>../Script_Pauline_contour_Reunion/communes/COMMUNE.shp</datasource>
+      <id>Communes_10a10d57_2d3e_41d6_af91_486093f28b68</id>
+      <datasource>./Communes.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>COMMUNE</layername>
+      <layername>Communes</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=utm +zone=40 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
@@ -127,11 +137,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial minz="0" dimensions="2" miny="0" maxy="0" maxz="0" maxx="0" crs="" minx="0"/>
+          <spatial minx="0" maxx="0" maxz="0" miny="0" dimensions="2" maxy="0" crs="" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -150,7 +160,7 @@
         </contact>
         <links/>
       </resourceMetadata>
-      <provider encoding="System">ogr</provider>
+      <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
       <dataDependencies/>
@@ -159,26 +169,26 @@
         <map-layer-style name="défaut"/>
       </map-layer-style-manager>
       <auxiliaryLayer/>
-      <renderer-v2 type="singleSymbol" symbollevels="0" enableorderby="0" forceraster="0">
+      <renderer-v2 type="singleSymbol" enableorderby="0" symbollevels="0" forceraster="0">
         <symbols>
-          <symbol type="fill" alpha="1" clip_to_extent="1" name="0">
-            <layer pass="0" enabled="1" class="SimpleFill" locked="0">
-              <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="color" v="75,212,221,117"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="35,35,35,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.26"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
+          <symbol type="fill" clip_to_extent="1" alpha="1" name="0">
+            <layer enabled="1" locked="0" pass="0" class="SimpleFill">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="142,193,208,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="35,35,35,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.26" k="outline_width"/>
+              <prop v="MM" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
               <data_defined_properties>
                 <Option type="Map">
-                  <Option type="QString" value="" name="name"/>
+                  <Option type="QString" name="name" value=""/>
                   <Option name="properties"/>
-                  <Option type="QString" value="collection" name="type"/>
+                  <Option type="QString" name="type" value="collection"/>
                 </Option>
               </data_defined_properties>
             </layer>
@@ -187,48 +197,30 @@
         <rotation/>
         <sizescale/>
       </renderer-v2>
-      <labeling type="simple">
-        <settings>
-          <text-style fontUnderline="0" multilineHeight="1" fontStrikeout="0" textColor="0,0,0,255" fontWeight="50" fontLetterSpacing="0" isExpression="1" fontItalic="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontSize="10" textOpacity="1" fontSizeUnit="Point" blendMode="0" fieldName="NOM_COM ||   '\n'  || MOY_G_JANV ||   '\n'  || MOY_D_JANV" namedStyle="Normal" useSubstitutions="0" fontCapitals="0" previewBkgrdColor="#ffffff" fontWordSpacing="0" fontFamily="MS Shell Dlg 2">
-            <text-buffer bufferDraw="0" bufferBlendMode="0" bufferJoinStyle="128" bufferNoFill="1" bufferSize="1" bufferColor="255,255,255,255" bufferOpacity="1" bufferSizeUnits="MM" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
-            <background shapeBlendMode="0" shapeRadiiY="0" shapeJoinStyle="64" shapeSVGFile="" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthUnit="MM" shapeRotationType="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetY="0" shapeRadiiUnit="MM" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeRotation="0" shapeFillColor="255,255,255,255" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeSizeType="0" shapeSizeY="0" shapeOpacity="1" shapeDraw="0" shapeRadiiX="0" shapeType="0" shapeOffsetUnit="MM" shapeSizeX="0" shapeSizeUnit="MM" shapeBorderColor="128,128,128,255" shapeBorderWidth="0" shapeOffsetX="0"/>
-            <shadow shadowUnder="0" shadowRadiusUnit="MM" shadowDraw="0" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowColor="0,0,0,255" shadowOffsetGlobal="1" shadowBlendMode="6" shadowScale="100" shadowOffsetAngle="135" shadowOffsetUnit="MM" shadowOffsetDist="1" shadowRadius="1.5" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowRadiusAlphaOnly="0" shadowOpacity="0.7"/>
-            <substitutions/>
-          </text-style>
-          <text-format formatNumbers="0" multilineAlign="4294967295" addDirectionSymbol="0" wrapChar="" decimals="3" reverseDirectionSymbol="0" rightDirectionSymbol=">" placeDirectionSymbol="0" leftDirectionSymbol="&lt;" plussign="0"/>
-          <placement centroidInside="0" maxCurvedCharAngleOut="-25" maxCurvedCharAngleIn="25" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" priority="5" rotationAngle="0" xOffset="0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" fitInPolygonOnly="0" offsetType="0" repeatDistanceUnits="MM" dist="0" repeatDistance="0" quadOffset="4" offsetUnits="MM" placementFlags="10" placement="0" distMapUnitScale="3x:0,0,0,0,0,0" centroidWhole="0" preserveRotation="1" distUnits="MM" yOffset="0"/>
-          <rendering obstacle="0" minFeatureSize="0" fontLimitPixelSize="1" scaleVisibility="0" maxNumLabels="2000" fontMinPixelSize="10" scaleMax="0" obstacleFactor="1" displayAll="0" labelPerPart="0" limitNumLabels="0" mergeLines="0" obstacleType="0" zIndex="0" fontMaxPixelSize="11" scaleMin="0" drawLabels="1" upsidedownLabels="0"/>
-          <dd_properties>
-            <Option type="Map">
-              <Option type="QString" value="" name="name"/>
-              <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
-            </Option>
-          </dd_properties>
-        </settings>
-      </labeling>
       <customproperties>
-        <property value="ID_GEOFLA" key="dualview/previewExpressions"/>
-        <property value="0" key="embeddedWidgets/count"/>
+        <property key="dualview/previewExpressions">
+          <value>"ID_GEOFLA"</value>
+        </property>
+        <property key="embeddedWidgets/count" value="0"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
-      <LinearlyInterpolatedDiagramRenderer attributeLegend="1" lowerValue="0" lowerWidth="0" upperHeight="50" upperWidth="50" lowerHeight="0" diagramType="Histogram" classificationField="MOY_G_JANV" upperValue="810">
-        <DiagramCategory penAlpha="255" diagramOrientation="Up" enabled="1" scaleDependency="Area" maxScaleDenominator="1e+8" lineSizeScale="3x:0,0,0,0,0,0" sizeScale="3x:0,0,0,0,0,0" lineSizeType="MM" minimumSize="0" labelPlacementMethod="XHeight" penColor="#000000" opacity="1" sizeType="MM" barWidth="5" height="15" scaleBasedVisibility="0" width="15" penWidth="0" backgroundAlpha="255" minScaleDenominator="0" backgroundColor="#ffffff" rotationOffset="270">
-          <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
-          <attribute field="&quot;MOY_G_JANV&quot;" color="#ff0004" label="MOY_G_JANV"/>
-          <attribute field="&quot;MOY_D_JANV&quot;" color="#5acd4d" label="MOY_D_JANV"/>
+      <LinearlyInterpolatedDiagramRenderer attributeLegend="1" lowerWidth="0" classificationField="MOY_G_JANV" upperWidth="50" diagramType="Histogram" lowerValue="0" upperHeight="50" upperValue="810" lowerHeight="0">
+        <DiagramCategory penColor="#000000" lineSizeType="MM" maxScaleDenominator="1e+8" width="15" backgroundAlpha="255" scaleBasedVisibility="0" minScaleDenominator="0" lineSizeScale="3x:0,0,0,0,0,0" labelPlacementMethod="XHeight" opacity="1" barWidth="5" enabled="1" scaleDependency="Area" minimumSize="0" sizeType="MM" penAlpha="255" rotationOffset="270" penWidth="0" backgroundColor="#ffffff" diagramOrientation="Up" sizeScale="3x:0,0,0,0,0,0" height="15">
+          <fontProperties style="" description="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0"/>
+          <attribute color="#33bb2c" field="&quot;MOY_G_JANV&quot;" label="MOY_G_JANV"/>
+          <attribute color="#ff0004" field="&quot;MOY_D_JANV&quot;" label="MOY_D_JANV"/>
         </DiagramCategory>
       </LinearlyInterpolatedDiagramRenderer>
-      <DiagramLayerSettings dist="0.1" obstacle="0" linePlacementFlags="18" zIndex="0" priority="10" showAll="1" placement="0">
+      <DiagramLayerSettings showAll="1" obstacle="0" zIndex="-1" linePlacementFlags="18" priority="0" placement="0" dist="0">
         <properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option type="QString" name="name" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option type="QString" name="type" value="collection"/>
           </Option>
         </properties>
       </DiagramLayerSettings>
@@ -480,199 +472,199 @@
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias field="ID_GEOFLA" index="0" name=""/>
-        <alias field="CODE_COM" index="1" name=""/>
-        <alias field="INSEE_COM" index="2" name=""/>
-        <alias field="NOM_COM" index="3" name=""/>
-        <alias field="X_CHF_LIEU" index="4" name=""/>
-        <alias field="Y_CHF_LIEU" index="5" name=""/>
-        <alias field="X_CENTROID" index="6" name=""/>
-        <alias field="Y_CENTROID" index="7" name=""/>
-        <alias field="Z_MOYEN" index="8" name=""/>
-        <alias field="SUPERFICIE" index="9" name=""/>
-        <alias field="POPULATION" index="10" name=""/>
-        <alias field="MOY_G_JANV" index="11" name=""/>
-        <alias field="MOY_D_JANV" index="12" name=""/>
-        <alias field="MOY_G_FEVR" index="13" name=""/>
-        <alias field="MOY_D_FEVR" index="14" name=""/>
-        <alias field="MOY_G_MARS" index="15" name=""/>
-        <alias field="MOY_D_MARS" index="16" name=""/>
-        <alias field="MOY_G_AVRI" index="17" name=""/>
-        <alias field="MOY_D_AVRI" index="18" name=""/>
-        <alias field="MOY_G_MAI" index="19" name=""/>
-        <alias field="MOY_D_MAI" index="20" name=""/>
-        <alias field="MOY_G_JUIN" index="21" name=""/>
-        <alias field="MOY_D_JUIN" index="22" name=""/>
-        <alias field="MOY_G_JUIL" index="23" name=""/>
-        <alias field="MOY_D_JUIL" index="24" name=""/>
-        <alias field="MOY_G_AOUT" index="25" name=""/>
-        <alias field="MOY_D_AOUT" index="26" name=""/>
-        <alias field="MOY_G_SEPT" index="27" name=""/>
-        <alias field="MOY_D_SEPT" index="28" name=""/>
-        <alias field="MOY_G_OCTO" index="29" name=""/>
-        <alias field="MOY_D_OCTO" index="30" name=""/>
-        <alias field="MOY_G_NOV" index="31" name=""/>
-        <alias field="MOY_D_NOV" index="32" name=""/>
-        <alias field="MOY_G_DEC" index="33" name=""/>
-        <alias field="MOY_D_DEC" index="34" name=""/>
+        <alias field="ID_GEOFLA" name="" index="0"/>
+        <alias field="CODE_COM" name="" index="1"/>
+        <alias field="INSEE_COM" name="" index="2"/>
+        <alias field="NOM_COM" name="" index="3"/>
+        <alias field="X_CHF_LIEU" name="" index="4"/>
+        <alias field="Y_CHF_LIEU" name="" index="5"/>
+        <alias field="X_CENTROID" name="" index="6"/>
+        <alias field="Y_CENTROID" name="" index="7"/>
+        <alias field="Z_MOYEN" name="" index="8"/>
+        <alias field="SUPERFICIE" name="" index="9"/>
+        <alias field="POPULATION" name="" index="10"/>
+        <alias field="MOY_G_JANV" name="" index="11"/>
+        <alias field="MOY_D_JANV" name="" index="12"/>
+        <alias field="MOY_G_FEVR" name="" index="13"/>
+        <alias field="MOY_D_FEVR" name="" index="14"/>
+        <alias field="MOY_G_MARS" name="" index="15"/>
+        <alias field="MOY_D_MARS" name="" index="16"/>
+        <alias field="MOY_G_AVRI" name="" index="17"/>
+        <alias field="MOY_D_AVRI" name="" index="18"/>
+        <alias field="MOY_G_MAI" name="" index="19"/>
+        <alias field="MOY_D_MAI" name="" index="20"/>
+        <alias field="MOY_G_JUIN" name="" index="21"/>
+        <alias field="MOY_D_JUIN" name="" index="22"/>
+        <alias field="MOY_G_JUIL" name="" index="23"/>
+        <alias field="MOY_D_JUIL" name="" index="24"/>
+        <alias field="MOY_G_AOUT" name="" index="25"/>
+        <alias field="MOY_D_AOUT" name="" index="26"/>
+        <alias field="MOY_G_SEPT" name="" index="27"/>
+        <alias field="MOY_D_SEPT" name="" index="28"/>
+        <alias field="MOY_G_OCTO" name="" index="29"/>
+        <alias field="MOY_D_OCTO" name="" index="30"/>
+        <alias field="MOY_G_NOV" name="" index="31"/>
+        <alias field="MOY_D_NOV" name="" index="32"/>
+        <alias field="MOY_G_DEC" name="" index="33"/>
+        <alias field="MOY_D_DEC" name="" index="34"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default field="ID_GEOFLA" expression="" applyOnUpdate="0"/>
-        <default field="CODE_COM" expression="" applyOnUpdate="0"/>
-        <default field="INSEE_COM" expression="" applyOnUpdate="0"/>
-        <default field="NOM_COM" expression="" applyOnUpdate="0"/>
-        <default field="X_CHF_LIEU" expression="" applyOnUpdate="0"/>
-        <default field="Y_CHF_LIEU" expression="" applyOnUpdate="0"/>
-        <default field="X_CENTROID" expression="" applyOnUpdate="0"/>
-        <default field="Y_CENTROID" expression="" applyOnUpdate="0"/>
-        <default field="Z_MOYEN" expression="" applyOnUpdate="0"/>
-        <default field="SUPERFICIE" expression="" applyOnUpdate="0"/>
-        <default field="POPULATION" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_JANV" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_JANV" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_FEVR" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_FEVR" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_MARS" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_MARS" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_AVRI" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_AVRI" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_MAI" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_MAI" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_JUIN" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_JUIN" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_JUIL" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_JUIL" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_AOUT" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_AOUT" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_SEPT" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_SEPT" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_OCTO" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_OCTO" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_NOV" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_NOV" expression="" applyOnUpdate="0"/>
-        <default field="MOY_G_DEC" expression="" applyOnUpdate="0"/>
-        <default field="MOY_D_DEC" expression="" applyOnUpdate="0"/>
+        <default expression="" field="ID_GEOFLA" applyOnUpdate="0"/>
+        <default expression="" field="CODE_COM" applyOnUpdate="0"/>
+        <default expression="" field="INSEE_COM" applyOnUpdate="0"/>
+        <default expression="" field="NOM_COM" applyOnUpdate="0"/>
+        <default expression="" field="X_CHF_LIEU" applyOnUpdate="0"/>
+        <default expression="" field="Y_CHF_LIEU" applyOnUpdate="0"/>
+        <default expression="" field="X_CENTROID" applyOnUpdate="0"/>
+        <default expression="" field="Y_CENTROID" applyOnUpdate="0"/>
+        <default expression="" field="Z_MOYEN" applyOnUpdate="0"/>
+        <default expression="" field="SUPERFICIE" applyOnUpdate="0"/>
+        <default expression="" field="POPULATION" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_JANV" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_JANV" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_FEVR" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_FEVR" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_MARS" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_MARS" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_AVRI" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_AVRI" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_MAI" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_MAI" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_JUIN" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_JUIN" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_JUIL" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_JUIL" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_AOUT" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_AOUT" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_SEPT" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_SEPT" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_OCTO" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_OCTO" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_NOV" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_NOV" applyOnUpdate="0"/>
+        <default expression="" field="MOY_G_DEC" applyOnUpdate="0"/>
+        <default expression="" field="MOY_D_DEC" applyOnUpdate="0"/>
       </defaults>
       <constraints>
-        <constraint field="ID_GEOFLA" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="CODE_COM" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="INSEE_COM" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="NOM_COM" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="X_CHF_LIEU" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="Y_CHF_LIEU" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="X_CENTROID" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="Y_CENTROID" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="Z_MOYEN" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="SUPERFICIE" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="POPULATION" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_JANV" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_JANV" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_FEVR" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_FEVR" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_MARS" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_MARS" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_AVRI" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_AVRI" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_MAI" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_MAI" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_JUIN" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_JUIN" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_JUIL" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_JUIL" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_AOUT" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_AOUT" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_SEPT" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_SEPT" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_OCTO" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_OCTO" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_NOV" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_NOV" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_G_DEC" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="MOY_D_DEC" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="ID_GEOFLA" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="CODE_COM" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="INSEE_COM" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="NOM_COM" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="X_CHF_LIEU" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="Y_CHF_LIEU" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="X_CENTROID" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="Y_CENTROID" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="Z_MOYEN" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="SUPERFICIE" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="POPULATION" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_JANV" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_JANV" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_FEVR" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_FEVR" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_MARS" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_MARS" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_AVRI" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_AVRI" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_MAI" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_MAI" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_JUIN" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_JUIN" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_JUIL" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_JUIL" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_AOUT" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_AOUT" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_SEPT" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_SEPT" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_OCTO" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_OCTO" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_NOV" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_NOV" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_G_DEC" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="MOY_D_DEC" notnull_strength="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint field="ID_GEOFLA" exp="" desc=""/>
-        <constraint field="CODE_COM" exp="" desc=""/>
-        <constraint field="INSEE_COM" exp="" desc=""/>
-        <constraint field="NOM_COM" exp="" desc=""/>
-        <constraint field="X_CHF_LIEU" exp="" desc=""/>
-        <constraint field="Y_CHF_LIEU" exp="" desc=""/>
-        <constraint field="X_CENTROID" exp="" desc=""/>
-        <constraint field="Y_CENTROID" exp="" desc=""/>
-        <constraint field="Z_MOYEN" exp="" desc=""/>
-        <constraint field="SUPERFICIE" exp="" desc=""/>
-        <constraint field="POPULATION" exp="" desc=""/>
-        <constraint field="MOY_G_JANV" exp="" desc=""/>
-        <constraint field="MOY_D_JANV" exp="" desc=""/>
-        <constraint field="MOY_G_FEVR" exp="" desc=""/>
-        <constraint field="MOY_D_FEVR" exp="" desc=""/>
-        <constraint field="MOY_G_MARS" exp="" desc=""/>
-        <constraint field="MOY_D_MARS" exp="" desc=""/>
-        <constraint field="MOY_G_AVRI" exp="" desc=""/>
-        <constraint field="MOY_D_AVRI" exp="" desc=""/>
-        <constraint field="MOY_G_MAI" exp="" desc=""/>
-        <constraint field="MOY_D_MAI" exp="" desc=""/>
-        <constraint field="MOY_G_JUIN" exp="" desc=""/>
-        <constraint field="MOY_D_JUIN" exp="" desc=""/>
-        <constraint field="MOY_G_JUIL" exp="" desc=""/>
-        <constraint field="MOY_D_JUIL" exp="" desc=""/>
-        <constraint field="MOY_G_AOUT" exp="" desc=""/>
-        <constraint field="MOY_D_AOUT" exp="" desc=""/>
-        <constraint field="MOY_G_SEPT" exp="" desc=""/>
-        <constraint field="MOY_D_SEPT" exp="" desc=""/>
-        <constraint field="MOY_G_OCTO" exp="" desc=""/>
-        <constraint field="MOY_D_OCTO" exp="" desc=""/>
-        <constraint field="MOY_G_NOV" exp="" desc=""/>
-        <constraint field="MOY_D_NOV" exp="" desc=""/>
-        <constraint field="MOY_G_DEC" exp="" desc=""/>
-        <constraint field="MOY_D_DEC" exp="" desc=""/>
+        <constraint exp="" field="ID_GEOFLA" desc=""/>
+        <constraint exp="" field="CODE_COM" desc=""/>
+        <constraint exp="" field="INSEE_COM" desc=""/>
+        <constraint exp="" field="NOM_COM" desc=""/>
+        <constraint exp="" field="X_CHF_LIEU" desc=""/>
+        <constraint exp="" field="Y_CHF_LIEU" desc=""/>
+        <constraint exp="" field="X_CENTROID" desc=""/>
+        <constraint exp="" field="Y_CENTROID" desc=""/>
+        <constraint exp="" field="Z_MOYEN" desc=""/>
+        <constraint exp="" field="SUPERFICIE" desc=""/>
+        <constraint exp="" field="POPULATION" desc=""/>
+        <constraint exp="" field="MOY_G_JANV" desc=""/>
+        <constraint exp="" field="MOY_D_JANV" desc=""/>
+        <constraint exp="" field="MOY_G_FEVR" desc=""/>
+        <constraint exp="" field="MOY_D_FEVR" desc=""/>
+        <constraint exp="" field="MOY_G_MARS" desc=""/>
+        <constraint exp="" field="MOY_D_MARS" desc=""/>
+        <constraint exp="" field="MOY_G_AVRI" desc=""/>
+        <constraint exp="" field="MOY_D_AVRI" desc=""/>
+        <constraint exp="" field="MOY_G_MAI" desc=""/>
+        <constraint exp="" field="MOY_D_MAI" desc=""/>
+        <constraint exp="" field="MOY_G_JUIN" desc=""/>
+        <constraint exp="" field="MOY_D_JUIN" desc=""/>
+        <constraint exp="" field="MOY_G_JUIL" desc=""/>
+        <constraint exp="" field="MOY_D_JUIL" desc=""/>
+        <constraint exp="" field="MOY_G_AOUT" desc=""/>
+        <constraint exp="" field="MOY_D_AOUT" desc=""/>
+        <constraint exp="" field="MOY_G_SEPT" desc=""/>
+        <constraint exp="" field="MOY_D_SEPT" desc=""/>
+        <constraint exp="" field="MOY_G_OCTO" desc=""/>
+        <constraint exp="" field="MOY_D_OCTO" desc=""/>
+        <constraint exp="" field="MOY_G_NOV" desc=""/>
+        <constraint exp="" field="MOY_D_NOV" desc=""/>
+        <constraint exp="" field="MOY_G_DEC" desc=""/>
+        <constraint exp="" field="MOY_D_DEC" desc=""/>
       </constraintExpressions>
       <attributeactions>
-        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
       </attributeactions>
-      <attributetableconfig sortExpression="&quot;NOM_COM&quot;" sortOrder="0" actionWidgetStyle="dropDown">
+      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
         <columns>
-          <column type="field" width="166" hidden="0" name="ID_GEOFLA"/>
-          <column type="field" width="-1" hidden="0" name="CODE_COM"/>
-          <column type="field" width="-1" hidden="0" name="INSEE_COM"/>
-          <column type="field" width="-1" hidden="0" name="NOM_COM"/>
-          <column type="field" width="-1" hidden="0" name="X_CHF_LIEU"/>
-          <column type="field" width="-1" hidden="0" name="Y_CHF_LIEU"/>
-          <column type="field" width="-1" hidden="0" name="X_CENTROID"/>
-          <column type="field" width="-1" hidden="0" name="Y_CENTROID"/>
-          <column type="field" width="-1" hidden="0" name="Z_MOYEN"/>
-          <column type="field" width="-1" hidden="0" name="SUPERFICIE"/>
-          <column type="field" width="-1" hidden="0" name="POPULATION"/>
+          <column type="field" name="ID_GEOFLA" width="-1" hidden="0"/>
+          <column type="field" name="CODE_COM" width="-1" hidden="0"/>
+          <column type="field" name="INSEE_COM" width="-1" hidden="0"/>
+          <column type="field" name="NOM_COM" width="-1" hidden="0"/>
+          <column type="field" name="X_CHF_LIEU" width="-1" hidden="0"/>
+          <column type="field" name="Y_CHF_LIEU" width="-1" hidden="0"/>
+          <column type="field" name="X_CENTROID" width="-1" hidden="0"/>
+          <column type="field" name="Y_CENTROID" width="-1" hidden="0"/>
+          <column type="field" name="Z_MOYEN" width="-1" hidden="0"/>
+          <column type="field" name="SUPERFICIE" width="-1" hidden="0"/>
+          <column type="field" name="POPULATION" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_JANV" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_JANV" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_FEVR" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_FEVR" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_MARS" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_MARS" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_AVRI" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_AVRI" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_MAI" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_MAI" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_JUIN" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_JUIN" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_JUIL" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_JUIL" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_AOUT" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_AOUT" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_SEPT" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_SEPT" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_OCTO" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_OCTO" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_NOV" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_NOV" width="-1" hidden="0"/>
+          <column type="field" name="MOY_G_DEC" width="-1" hidden="0"/>
+          <column type="field" name="MOY_D_DEC" width="-1" hidden="0"/>
           <column type="actions" width="-1" hidden="1"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_JANV"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_JANV"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_FEVR"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_FEVR"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_MARS"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_MARS"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_AVRI"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_AVRI"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_MAI"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_MAI"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_JUIN"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_JUIN"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_JUIL"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_JUIL"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_AOUT"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_AOUT"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_SEPT"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_SEPT"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_OCTO"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_OCTO"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_NOV"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_NOV"/>
-          <column type="field" width="-1" hidden="0" name="MOY_G_DEC"/>
-          <column type="field" width="-1" hidden="0" name="MOY_D_DEC"/>
         </columns>
       </attributetableconfig>
-      <editform>.</editform>
+      <editform></editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath></editforminitfilepath>
@@ -695,90 +687,78 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <editable>
-        <field editable="1" name="CODE_ARR"/>
-        <field editable="1" name="CODE_COM"/>
-        <field editable="1" name="CODE_DEPT"/>
-        <field editable="1" name="CODE_REG"/>
-        <field editable="1" name="ID_GEOFLA"/>
-        <field editable="1" name="INSEE_COM"/>
-        <field editable="1" name="MOY_D_AOUT"/>
-        <field editable="1" name="MOY_D_AVRI"/>
-        <field editable="1" name="MOY_D_DEC"/>
-        <field editable="1" name="MOY_D_FEVR"/>
-        <field editable="1" name="MOY_D_JANV"/>
-        <field editable="1" name="MOY_D_JUIL"/>
-        <field editable="1" name="MOY_D_JUIN"/>
-        <field editable="1" name="MOY_D_MAI"/>
-        <field editable="1" name="MOY_D_MARS"/>
-        <field editable="1" name="MOY_D_NOV"/>
-        <field editable="1" name="MOY_D_OCTO"/>
-        <field editable="1" name="MOY_D_SEPT"/>
-        <field editable="1" name="MOY_G_AOUT"/>
-        <field editable="1" name="MOY_G_AVRI"/>
-        <field editable="1" name="MOY_G_DEC"/>
-        <field editable="1" name="MOY_G_FEVR"/>
-        <field editable="1" name="MOY_G_JANV"/>
-        <field editable="1" name="MOY_G_JUIL"/>
-        <field editable="1" name="MOY_G_JUIN"/>
-        <field editable="1" name="MOY_G_MAI"/>
-        <field editable="1" name="MOY_G_MARS"/>
-        <field editable="1" name="MOY_G_NOV"/>
-        <field editable="1" name="MOY_G_OCTO"/>
-        <field editable="1" name="MOY_G_SEPT"/>
-        <field editable="1" name="NOM_COM"/>
-        <field editable="1" name="NOM_DEPT"/>
-        <field editable="1" name="NOM_REG"/>
-        <field editable="1" name="POPULATION"/>
-        <field editable="1" name="STATUT"/>
-        <field editable="1" name="SUPERFICIE"/>
-        <field editable="1" name="X_CENTROID"/>
-        <field editable="1" name="X_CHF_LIEU"/>
-        <field editable="1" name="Y_CENTROID"/>
-        <field editable="1" name="Y_CHF_LIEU"/>
-        <field editable="1" name="Z_MOYEN"/>
+        <field name="CODE_COM" editable="1"/>
+        <field name="ID_GEOFLA" editable="1"/>
+        <field name="INSEE_COM" editable="1"/>
+        <field name="MOY_D_AOUT" editable="1"/>
+        <field name="MOY_D_AVRI" editable="1"/>
+        <field name="MOY_D_DEC" editable="1"/>
+        <field name="MOY_D_FEVR" editable="1"/>
+        <field name="MOY_D_JANV" editable="1"/>
+        <field name="MOY_D_JUIL" editable="1"/>
+        <field name="MOY_D_JUIN" editable="1"/>
+        <field name="MOY_D_MAI" editable="1"/>
+        <field name="MOY_D_MARS" editable="1"/>
+        <field name="MOY_D_NOV" editable="1"/>
+        <field name="MOY_D_OCTO" editable="1"/>
+        <field name="MOY_D_SEPT" editable="1"/>
+        <field name="MOY_G_AOUT" editable="1"/>
+        <field name="MOY_G_AVRI" editable="1"/>
+        <field name="MOY_G_DEC" editable="1"/>
+        <field name="MOY_G_FEVR" editable="1"/>
+        <field name="MOY_G_JANV" editable="1"/>
+        <field name="MOY_G_JUIL" editable="1"/>
+        <field name="MOY_G_JUIN" editable="1"/>
+        <field name="MOY_G_MAI" editable="1"/>
+        <field name="MOY_G_MARS" editable="1"/>
+        <field name="MOY_G_NOV" editable="1"/>
+        <field name="MOY_G_OCTO" editable="1"/>
+        <field name="MOY_G_SEPT" editable="1"/>
+        <field name="NOM_COM" editable="1"/>
+        <field name="POPULATION" editable="1"/>
+        <field name="SUPERFICIE" editable="1"/>
+        <field name="X_CENTROID" editable="1"/>
+        <field name="X_CHF_LIEU" editable="1"/>
+        <field name="Y_CENTROID" editable="1"/>
+        <field name="Y_CHF_LIEU" editable="1"/>
+        <field name="Z_MOYEN" editable="1"/>
       </editable>
       <labelOnTop>
-        <field name="CODE_ARR" labelOnTop="0"/>
-        <field name="CODE_COM" labelOnTop="0"/>
-        <field name="CODE_DEPT" labelOnTop="0"/>
-        <field name="CODE_REG" labelOnTop="0"/>
-        <field name="ID_GEOFLA" labelOnTop="0"/>
-        <field name="INSEE_COM" labelOnTop="0"/>
-        <field name="MOY_D_AOUT" labelOnTop="0"/>
-        <field name="MOY_D_AVRI" labelOnTop="0"/>
-        <field name="MOY_D_DEC" labelOnTop="0"/>
-        <field name="MOY_D_FEVR" labelOnTop="0"/>
-        <field name="MOY_D_JANV" labelOnTop="0"/>
-        <field name="MOY_D_JUIL" labelOnTop="0"/>
-        <field name="MOY_D_JUIN" labelOnTop="0"/>
-        <field name="MOY_D_MAI" labelOnTop="0"/>
-        <field name="MOY_D_MARS" labelOnTop="0"/>
-        <field name="MOY_D_NOV" labelOnTop="0"/>
-        <field name="MOY_D_OCTO" labelOnTop="0"/>
-        <field name="MOY_D_SEPT" labelOnTop="0"/>
-        <field name="MOY_G_AOUT" labelOnTop="0"/>
-        <field name="MOY_G_AVRI" labelOnTop="0"/>
-        <field name="MOY_G_DEC" labelOnTop="0"/>
-        <field name="MOY_G_FEVR" labelOnTop="0"/>
-        <field name="MOY_G_JANV" labelOnTop="0"/>
-        <field name="MOY_G_JUIL" labelOnTop="0"/>
-        <field name="MOY_G_JUIN" labelOnTop="0"/>
-        <field name="MOY_G_MAI" labelOnTop="0"/>
-        <field name="MOY_G_MARS" labelOnTop="0"/>
-        <field name="MOY_G_NOV" labelOnTop="0"/>
-        <field name="MOY_G_OCTO" labelOnTop="0"/>
-        <field name="MOY_G_SEPT" labelOnTop="0"/>
-        <field name="NOM_COM" labelOnTop="0"/>
-        <field name="NOM_DEPT" labelOnTop="0"/>
-        <field name="NOM_REG" labelOnTop="0"/>
-        <field name="POPULATION" labelOnTop="0"/>
-        <field name="STATUT" labelOnTop="0"/>
-        <field name="SUPERFICIE" labelOnTop="0"/>
-        <field name="X_CENTROID" labelOnTop="0"/>
-        <field name="X_CHF_LIEU" labelOnTop="0"/>
-        <field name="Y_CENTROID" labelOnTop="0"/>
-        <field name="Y_CHF_LIEU" labelOnTop="0"/>
-        <field name="Z_MOYEN" labelOnTop="0"/>
+        <field labelOnTop="0" name="CODE_COM"/>
+        <field labelOnTop="0" name="ID_GEOFLA"/>
+        <field labelOnTop="0" name="INSEE_COM"/>
+        <field labelOnTop="0" name="MOY_D_AOUT"/>
+        <field labelOnTop="0" name="MOY_D_AVRI"/>
+        <field labelOnTop="0" name="MOY_D_DEC"/>
+        <field labelOnTop="0" name="MOY_D_FEVR"/>
+        <field labelOnTop="0" name="MOY_D_JANV"/>
+        <field labelOnTop="0" name="MOY_D_JUIL"/>
+        <field labelOnTop="0" name="MOY_D_JUIN"/>
+        <field labelOnTop="0" name="MOY_D_MAI"/>
+        <field labelOnTop="0" name="MOY_D_MARS"/>
+        <field labelOnTop="0" name="MOY_D_NOV"/>
+        <field labelOnTop="0" name="MOY_D_OCTO"/>
+        <field labelOnTop="0" name="MOY_D_SEPT"/>
+        <field labelOnTop="0" name="MOY_G_AOUT"/>
+        <field labelOnTop="0" name="MOY_G_AVRI"/>
+        <field labelOnTop="0" name="MOY_G_DEC"/>
+        <field labelOnTop="0" name="MOY_G_FEVR"/>
+        <field labelOnTop="0" name="MOY_G_JANV"/>
+        <field labelOnTop="0" name="MOY_G_JUIL"/>
+        <field labelOnTop="0" name="MOY_G_JUIN"/>
+        <field labelOnTop="0" name="MOY_G_MAI"/>
+        <field labelOnTop="0" name="MOY_G_MARS"/>
+        <field labelOnTop="0" name="MOY_G_NOV"/>
+        <field labelOnTop="0" name="MOY_G_OCTO"/>
+        <field labelOnTop="0" name="MOY_G_SEPT"/>
+        <field labelOnTop="0" name="NOM_COM"/>
+        <field labelOnTop="0" name="POPULATION"/>
+        <field labelOnTop="0" name="SUPERFICIE"/>
+        <field labelOnTop="0" name="X_CENTROID"/>
+        <field labelOnTop="0" name="X_CHF_LIEU"/>
+        <field labelOnTop="0" name="Y_CENTROID"/>
+        <field labelOnTop="0" name="Y_CHF_LIEU"/>
+        <field labelOnTop="0" name="Z_MOYEN"/>
       </labelOnTop>
       <widgets/>
       <conditionalstyles>
@@ -789,19 +769,19 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>ID_GEOFLA</previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer type="vector" simplifyDrawingHints="1" simplifyAlgorithm="0" minScale="1e+8" maxScale="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" geometry="Polygon" simplifyMaxScale="1" simplifyDrawingTol="1" autoRefreshTime="0" labelsEnabled="0" simplifyLocal="1" refreshOnNotifyEnabled="0" hasScaleBasedVisibilityFlag="0" readOnly="0">
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" type="vector" maxScale="0" autoRefreshEnabled="0" geometry="Polygon" simplifyAlgorithm="0" simplifyMaxScale="1" labelsEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" readOnly="0" simplifyLocal="1" refreshOnNotifyMessage="" simplifyDrawingHints="1" simplifyDrawingTol="1">
       <extent>
         <xmin>314667.50000000942964107</xmin>
         <ymin>7634393.1999994209036231</ymin>
         <xmax>379238.60000000451691449</xmax>
         <ymax>7690971.49999948963522911</ymax>
       </extent>
-      <id>DEPARTEMENT_36dc8e04_d244_497b_a46e_f7900b8c8817</id>
-      <datasource>../Script_Pauline_contour_Reunion/departement/DEPARTEMENT.shp</datasource>
+      <id>Contours_bc8e1584_68c7_4ea8_a7c7_c2234c12fb07</id>
+      <datasource>./Contours.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>DEPARTEMENT</layername>
+      <layername>Contours</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=utm +zone=40 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
@@ -836,7 +816,7 @@ def my_form_open(dialog, layer, feature):
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial minz="0" dimensions="2" miny="0" maxy="0" maxz="0" maxx="0" crs="" minx="0"/>
+          <spatial minx="0" maxx="0" maxz="0" miny="0" dimensions="2" maxy="0" crs="" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -855,7 +835,7 @@ def my_form_open(dialog, layer, feature):
         </contact>
         <links/>
       </resourceMetadata>
-      <provider encoding="System">ogr</provider>
+      <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
       <dataDependencies/>
@@ -865,31 +845,31 @@ def my_form_open(dialog, layer, feature):
       </map-layer-style-manager>
       <auxiliaryLayer/>
       <renderer-v2 type="invertedPolygonRenderer" enableorderby="0" forceraster="0" preprocessing="0">
-        <renderer-v2 type="singleSymbol" symbollevels="0" enableorderby="0" forceraster="0">
+        <renderer-v2 type="singleSymbol" enableorderby="0" symbollevels="0" forceraster="0">
           <symbols>
-            <symbol type="fill" alpha="1" clip_to_extent="1" name="0">
-              <layer pass="0" enabled="1" class="ShapeburstFill" locked="0">
-                <prop k="blur_radius" v="0"/>
-                <prop k="color" v="0,0,0,255"/>
-                <prop k="color1" v="0,0,255,255"/>
-                <prop k="color2" v="0,255,0,255"/>
-                <prop k="color_type" v="0"/>
-                <prop k="discrete" v="0"/>
-                <prop k="distance_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <prop k="distance_unit" v="MM"/>
-                <prop k="gradient_color2" v="255,255,255,255"/>
-                <prop k="ignore_rings" v="0"/>
-                <prop k="max_distance" v="5"/>
-                <prop k="offset" v="0,0"/>
-                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <prop k="offset_unit" v="MM"/>
-                <prop k="rampType" v="gradient"/>
-                <prop k="use_whole_shape" v="0"/>
+            <symbol type="fill" clip_to_extent="1" alpha="1" name="0">
+              <layer enabled="1" locked="0" pass="0" class="ShapeburstFill">
+                <prop v="0" k="blur_radius"/>
+                <prop v="0,0,0,255" k="color"/>
+                <prop v="0,0,255,255" k="color1"/>
+                <prop v="0,255,0,255" k="color2"/>
+                <prop v="0" k="color_type"/>
+                <prop v="0" k="discrete"/>
+                <prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+                <prop v="MM" k="distance_unit"/>
+                <prop v="255,255,255,255" k="gradient_color2"/>
+                <prop v="0" k="ignore_rings"/>
+                <prop v="5" k="max_distance"/>
+                <prop v="0,0" k="offset"/>
+                <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                <prop v="MM" k="offset_unit"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="0" k="use_whole_shape"/>
                 <data_defined_properties>
                   <Option type="Map">
-                    <Option type="QString" value="" name="name"/>
+                    <Option type="QString" name="name" value=""/>
                     <Option name="properties"/>
-                    <Option type="QString" value="collection" name="type"/>
+                    <Option type="QString" name="type" value="collection"/>
                   </Option>
                 </data_defined_properties>
               </layer>
@@ -900,7 +880,7 @@ def my_form_open(dialog, layer, feature):
         </renderer-v2>
       </renderer-v2>
       <customproperties>
-        <property value="0" key="embeddedWidgets/count"/>
+        <property key="embeddedWidgets/count" value="0"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
       </customproperties>
@@ -908,17 +888,16 @@ def my_form_open(dialog, layer, feature):
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
       <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-        <DiagramCategory penAlpha="255" diagramOrientation="Up" enabled="0" scaleDependency="Area" maxScaleDenominator="1e+8" lineSizeScale="3x:0,0,0,0,0,0" sizeScale="3x:0,0,0,0,0,0" lineSizeType="MM" minimumSize="0" labelPlacementMethod="XHeight" penColor="#000000" opacity="1" sizeType="MM" barWidth="5" height="15" scaleBasedVisibility="0" width="15" penWidth="0" backgroundAlpha="255" minScaleDenominator="0" backgroundColor="#ffffff" rotationOffset="270">
-          <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
-          <attribute field="" color="#000000" label=""/>
+        <DiagramCategory penColor="#000000" lineSizeType="MM" maxScaleDenominator="1e+8" width="15" backgroundAlpha="255" scaleBasedVisibility="0" minScaleDenominator="0" lineSizeScale="3x:0,0,0,0,0,0" labelPlacementMethod="XHeight" opacity="1" barWidth="5" enabled="0" scaleDependency="Area" minimumSize="0" sizeType="MM" penAlpha="255" rotationOffset="270" penWidth="0" backgroundColor="#ffffff" diagramOrientation="Up" sizeScale="3x:0,0,0,0,0,0" height="15">
+          <fontProperties style="" description="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0"/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings dist="0" obstacle="0" linePlacementFlags="18" zIndex="0" priority="0" showAll="1" placement="0">
+      <DiagramLayerSettings showAll="1" obstacle="0" zIndex="0" linePlacementFlags="18" priority="0" placement="0" dist="0">
         <properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option type="QString" name="name" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option type="QString" name="type" value="collection"/>
           </Option>
         </properties>
       </DiagramLayerSettings>
@@ -1009,84 +988,84 @@ def my_form_open(dialog, layer, feature):
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias field="ID_GEOFLA" index="0" name=""/>
-        <alias field="CODE_DEPT" index="1" name=""/>
-        <alias field="NOM_DEPT" index="2" name=""/>
-        <alias field="CODE_CHF" index="3" name=""/>
-        <alias field="NOM_CHF" index="4" name=""/>
-        <alias field="X_CHF_LIEU" index="5" name=""/>
-        <alias field="Y_CHF_LIEU" index="6" name=""/>
-        <alias field="X_CENTROID" index="7" name=""/>
-        <alias field="Y_CENTROID" index="8" name=""/>
-        <alias field="CODE_REG" index="9" name=""/>
-        <alias field="NOM_REG" index="10" name=""/>
-        <alias field="Ray_Moy" index="11" name=""/>
+        <alias field="ID_GEOFLA" name="" index="0"/>
+        <alias field="CODE_DEPT" name="" index="1"/>
+        <alias field="NOM_DEPT" name="" index="2"/>
+        <alias field="CODE_CHF" name="" index="3"/>
+        <alias field="NOM_CHF" name="" index="4"/>
+        <alias field="X_CHF_LIEU" name="" index="5"/>
+        <alias field="Y_CHF_LIEU" name="" index="6"/>
+        <alias field="X_CENTROID" name="" index="7"/>
+        <alias field="Y_CENTROID" name="" index="8"/>
+        <alias field="CODE_REG" name="" index="9"/>
+        <alias field="NOM_REG" name="" index="10"/>
+        <alias field="Ray_Moy" name="" index="11"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default field="ID_GEOFLA" expression="" applyOnUpdate="0"/>
-        <default field="CODE_DEPT" expression="" applyOnUpdate="0"/>
-        <default field="NOM_DEPT" expression="" applyOnUpdate="0"/>
-        <default field="CODE_CHF" expression="" applyOnUpdate="0"/>
-        <default field="NOM_CHF" expression="" applyOnUpdate="0"/>
-        <default field="X_CHF_LIEU" expression="" applyOnUpdate="0"/>
-        <default field="Y_CHF_LIEU" expression="" applyOnUpdate="0"/>
-        <default field="X_CENTROID" expression="" applyOnUpdate="0"/>
-        <default field="Y_CENTROID" expression="" applyOnUpdate="0"/>
-        <default field="CODE_REG" expression="" applyOnUpdate="0"/>
-        <default field="NOM_REG" expression="" applyOnUpdate="0"/>
-        <default field="Ray_Moy" expression="" applyOnUpdate="0"/>
+        <default expression="" field="ID_GEOFLA" applyOnUpdate="0"/>
+        <default expression="" field="CODE_DEPT" applyOnUpdate="0"/>
+        <default expression="" field="NOM_DEPT" applyOnUpdate="0"/>
+        <default expression="" field="CODE_CHF" applyOnUpdate="0"/>
+        <default expression="" field="NOM_CHF" applyOnUpdate="0"/>
+        <default expression="" field="X_CHF_LIEU" applyOnUpdate="0"/>
+        <default expression="" field="Y_CHF_LIEU" applyOnUpdate="0"/>
+        <default expression="" field="X_CENTROID" applyOnUpdate="0"/>
+        <default expression="" field="Y_CENTROID" applyOnUpdate="0"/>
+        <default expression="" field="CODE_REG" applyOnUpdate="0"/>
+        <default expression="" field="NOM_REG" applyOnUpdate="0"/>
+        <default expression="" field="Ray_Moy" applyOnUpdate="0"/>
       </defaults>
       <constraints>
-        <constraint field="ID_GEOFLA" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="CODE_DEPT" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="NOM_DEPT" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="CODE_CHF" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="NOM_CHF" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="X_CHF_LIEU" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="Y_CHF_LIEU" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="X_CENTROID" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="Y_CENTROID" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="CODE_REG" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="NOM_REG" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
-        <constraint field="Ray_Moy" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="ID_GEOFLA" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="CODE_DEPT" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="NOM_DEPT" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="CODE_CHF" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="NOM_CHF" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="X_CHF_LIEU" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="Y_CHF_LIEU" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="X_CENTROID" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="Y_CENTROID" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="CODE_REG" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="NOM_REG" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="Ray_Moy" notnull_strength="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint field="ID_GEOFLA" exp="" desc=""/>
-        <constraint field="CODE_DEPT" exp="" desc=""/>
-        <constraint field="NOM_DEPT" exp="" desc=""/>
-        <constraint field="CODE_CHF" exp="" desc=""/>
-        <constraint field="NOM_CHF" exp="" desc=""/>
-        <constraint field="X_CHF_LIEU" exp="" desc=""/>
-        <constraint field="Y_CHF_LIEU" exp="" desc=""/>
-        <constraint field="X_CENTROID" exp="" desc=""/>
-        <constraint field="Y_CENTROID" exp="" desc=""/>
-        <constraint field="CODE_REG" exp="" desc=""/>
-        <constraint field="NOM_REG" exp="" desc=""/>
-        <constraint field="Ray_Moy" exp="" desc=""/>
+        <constraint exp="" field="ID_GEOFLA" desc=""/>
+        <constraint exp="" field="CODE_DEPT" desc=""/>
+        <constraint exp="" field="NOM_DEPT" desc=""/>
+        <constraint exp="" field="CODE_CHF" desc=""/>
+        <constraint exp="" field="NOM_CHF" desc=""/>
+        <constraint exp="" field="X_CHF_LIEU" desc=""/>
+        <constraint exp="" field="Y_CHF_LIEU" desc=""/>
+        <constraint exp="" field="X_CENTROID" desc=""/>
+        <constraint exp="" field="Y_CENTROID" desc=""/>
+        <constraint exp="" field="CODE_REG" desc=""/>
+        <constraint exp="" field="NOM_REG" desc=""/>
+        <constraint exp="" field="Ray_Moy" desc=""/>
       </constraintExpressions>
       <attributeactions>
-        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
       </attributeactions>
-      <attributetableconfig sortExpression="" sortOrder="0" actionWidgetStyle="dropDown">
+      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
         <columns>
-          <column type="field" width="-1" hidden="0" name="ID_GEOFLA"/>
-          <column type="field" width="-1" hidden="0" name="CODE_DEPT"/>
-          <column type="field" width="-1" hidden="0" name="NOM_DEPT"/>
-          <column type="field" width="-1" hidden="0" name="CODE_CHF"/>
-          <column type="field" width="-1" hidden="0" name="NOM_CHF"/>
-          <column type="field" width="-1" hidden="0" name="X_CHF_LIEU"/>
-          <column type="field" width="-1" hidden="0" name="Y_CHF_LIEU"/>
-          <column type="field" width="-1" hidden="0" name="X_CENTROID"/>
-          <column type="field" width="-1" hidden="0" name="Y_CENTROID"/>
-          <column type="field" width="-1" hidden="0" name="CODE_REG"/>
-          <column type="field" width="-1" hidden="0" name="NOM_REG"/>
-          <column type="field" width="-1" hidden="0" name="Ray_Moy"/>
+          <column type="field" name="ID_GEOFLA" width="-1" hidden="0"/>
+          <column type="field" name="CODE_DEPT" width="-1" hidden="0"/>
+          <column type="field" name="NOM_DEPT" width="-1" hidden="0"/>
+          <column type="field" name="CODE_CHF" width="-1" hidden="0"/>
+          <column type="field" name="NOM_CHF" width="-1" hidden="0"/>
+          <column type="field" name="X_CHF_LIEU" width="-1" hidden="0"/>
+          <column type="field" name="Y_CHF_LIEU" width="-1" hidden="0"/>
+          <column type="field" name="X_CENTROID" width="-1" hidden="0"/>
+          <column type="field" name="Y_CENTROID" width="-1" hidden="0"/>
+          <column type="field" name="CODE_REG" width="-1" hidden="0"/>
+          <column type="field" name="NOM_REG" width="-1" hidden="0"/>
+          <column type="field" name="Ray_Moy" width="-1" hidden="0"/>
           <column type="actions" width="-1" hidden="1"/>
         </columns>
       </attributetableconfig>
-      <editform>.</editform>
+      <editform></editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath></editforminitfilepath>
@@ -1109,32 +1088,32 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <editable>
-        <field editable="1" name="CODE_CHF"/>
-        <field editable="1" name="CODE_DEPT"/>
-        <field editable="1" name="CODE_REG"/>
-        <field editable="1" name="ID_GEOFLA"/>
-        <field editable="1" name="NOM_CHF"/>
-        <field editable="1" name="NOM_DEPT"/>
-        <field editable="1" name="NOM_REG"/>
-        <field editable="1" name="Ray_Moy"/>
-        <field editable="1" name="X_CENTROID"/>
-        <field editable="1" name="X_CHF_LIEU"/>
-        <field editable="1" name="Y_CENTROID"/>
-        <field editable="1" name="Y_CHF_LIEU"/>
+        <field name="CODE_CHF" editable="1"/>
+        <field name="CODE_DEPT" editable="1"/>
+        <field name="CODE_REG" editable="1"/>
+        <field name="ID_GEOFLA" editable="1"/>
+        <field name="NOM_CHF" editable="1"/>
+        <field name="NOM_DEPT" editable="1"/>
+        <field name="NOM_REG" editable="1"/>
+        <field name="Ray_Moy" editable="1"/>
+        <field name="X_CENTROID" editable="1"/>
+        <field name="X_CHF_LIEU" editable="1"/>
+        <field name="Y_CENTROID" editable="1"/>
+        <field name="Y_CHF_LIEU" editable="1"/>
       </editable>
       <labelOnTop>
-        <field name="CODE_CHF" labelOnTop="0"/>
-        <field name="CODE_DEPT" labelOnTop="0"/>
-        <field name="CODE_REG" labelOnTop="0"/>
-        <field name="ID_GEOFLA" labelOnTop="0"/>
-        <field name="NOM_CHF" labelOnTop="0"/>
-        <field name="NOM_DEPT" labelOnTop="0"/>
-        <field name="NOM_REG" labelOnTop="0"/>
-        <field name="Ray_Moy" labelOnTop="0"/>
-        <field name="X_CENTROID" labelOnTop="0"/>
-        <field name="X_CHF_LIEU" labelOnTop="0"/>
-        <field name="Y_CENTROID" labelOnTop="0"/>
-        <field name="Y_CHF_LIEU" labelOnTop="0"/>
+        <field labelOnTop="0" name="CODE_CHF"/>
+        <field labelOnTop="0" name="CODE_DEPT"/>
+        <field labelOnTop="0" name="CODE_REG"/>
+        <field labelOnTop="0" name="ID_GEOFLA"/>
+        <field labelOnTop="0" name="NOM_CHF"/>
+        <field labelOnTop="0" name="NOM_DEPT"/>
+        <field labelOnTop="0" name="NOM_REG"/>
+        <field labelOnTop="0" name="Ray_Moy"/>
+        <field labelOnTop="0" name="X_CENTROID"/>
+        <field labelOnTop="0" name="X_CHF_LIEU"/>
+        <field labelOnTop="0" name="Y_CENTROID"/>
+        <field labelOnTop="0" name="Y_CHF_LIEU"/>
       </labelOnTop>
       <widgets/>
       <conditionalstyles>
@@ -1145,19 +1124,19 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>ID_GEOFLA</previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer type="vector" simplifyDrawingHints="1" simplifyAlgorithm="0" minScale="1e+8" maxScale="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" geometry="Line" simplifyMaxScale="1" simplifyDrawingTol="1" autoRefreshTime="0" labelsEnabled="0" simplifyLocal="1" refreshOnNotifyEnabled="0" hasScaleBasedVisibilityFlag="0" readOnly="0">
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" type="vector" maxScale="0" autoRefreshEnabled="0" geometry="Line" simplifyAlgorithm="0" simplifyMaxScale="1" labelsEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" readOnly="0" simplifyLocal="1" refreshOnNotifyMessage="" simplifyDrawingHints="1" simplifyDrawingTol="1">
       <extent>
         <xmin>55.32693951000000254</xmin>
         <ymin>-21.36240533999999869</ymin>
         <xmax>55.80652623999999662</xmax>
         <ymax>-20.87701476000000156</ymax>
       </extent>
-      <id>crete_cbb70c9a_10f8_49fd_882b_b3fe85ceb538</id>
-      <datasource>../Script_Pauline_contour_Reunion/cretes/crete.shp</datasource>
+      <id>Cretes_39791ae8_e084_4b43_887a_a0a043a356cc</id>
+      <datasource>./Cretes.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>crete</layername>
+      <layername>Cretes</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -1191,27 +1170,10 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent>
-          <spatial minz="0" dimensions="2" miny="0" maxy="0" maxz="0" maxx="0" crs="" minx="0"/>
-          <temporal>
-            <period>
-              <start></start>
-              <end></end>
-            </period>
-          </temporal>
-        </extent>
-        <contact>
-          <name></name>
-          <organization></organization>
-          <position></position>
-          <voice></voice>
-          <fax></fax>
-          <email></email>
-          <role></role>
-        </contact>
+        <extent/>
         <links/>
       </resourceMetadata>
-      <provider encoding="System">ogr</provider>
+      <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
       <dataDependencies/>
@@ -1220,30 +1182,30 @@ def my_form_open(dialog, layer, feature):
         <map-layer-style name="défaut"/>
       </map-layer-style-manager>
       <auxiliaryLayer/>
-      <renderer-v2 type="singleSymbol" symbollevels="0" enableorderby="0" forceraster="0">
+      <renderer-v2 type="singleSymbol" enableorderby="0" symbollevels="0" forceraster="0">
         <symbols>
-          <symbol type="line" alpha="1" clip_to_extent="1" name="0">
-            <layer pass="0" enabled="1" class="SimpleLine" locked="0">
-              <prop k="capstyle" v="round"/>
-              <prop k="customdash" v="0.66;2"/>
-              <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="customdash_unit" v="MM"/>
-              <prop k="draw_inside_polygon" v="0"/>
-              <prop k="joinstyle" v="round"/>
-              <prop k="line_color" v="0,0,0,255"/>
-              <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="0.3"/>
-              <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="0"/>
-              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="use_custom_dash" v="1"/>
-              <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+          <symbol type="line" clip_to_extent="1" alpha="1" name="0">
+            <layer enabled="1" locked="0" pass="0" class="SimpleLine">
+              <prop v="square" k="capstyle"/>
+              <prop v="5;2" k="customdash"/>
+              <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+              <prop v="MM" k="customdash_unit"/>
+              <prop v="0" k="draw_inside_polygon"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="49,144,92,255" k="line_color"/>
+              <prop v="solid" k="line_style"/>
+              <prop v="0.26" k="line_width"/>
+              <prop v="MM" k="line_width_unit"/>
+              <prop v="0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="0" k="use_custom_dash"/>
+              <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
               <data_defined_properties>
                 <Option type="Map">
-                  <Option type="QString" value="" name="name"/>
+                  <Option type="QString" name="name" value=""/>
                   <Option name="properties"/>
-                  <Option type="QString" value="collection" name="type"/>
+                  <Option type="QString" name="type" value="collection"/>
                 </Option>
               </data_defined_properties>
             </layer>
@@ -1252,32 +1214,13 @@ def my_form_open(dialog, layer, feature):
         <rotation/>
         <sizescale/>
       </renderer-v2>
-      <customproperties>
-        <property value="0" key="embeddedWidgets/count"/>
-        <property key="variableNames"/>
-        <property key="variableValues"/>
-      </customproperties>
+      <customproperties/>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
-      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-        <DiagramCategory penAlpha="255" diagramOrientation="Up" enabled="0" scaleDependency="Area" maxScaleDenominator="1e+8" lineSizeScale="3x:0,0,0,0,0,0" sizeScale="3x:0,0,0,0,0,0" lineSizeType="MM" minimumSize="0" labelPlacementMethod="XHeight" penColor="#000000" opacity="1" sizeType="MM" barWidth="5" height="15" scaleBasedVisibility="0" width="15" penWidth="0" backgroundAlpha="255" minScaleDenominator="0" backgroundColor="#ffffff" rotationOffset="270">
-          <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
-          <attribute field="" color="#000000" label=""/>
-        </DiagramCategory>
-      </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings dist="0" obstacle="0" linePlacementFlags="18" zIndex="0" priority="0" showAll="1" placement="2">
-        <properties>
-          <Option type="Map">
-            <Option type="QString" value="" name="name"/>
-            <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
-          </Option>
-        </properties>
-      </DiagramLayerSettings>
       <fieldConfiguration>
         <field name="nb">
-          <editWidget type="TextEdit">
+          <editWidget type="">
             <config>
               <Option/>
             </config>
@@ -1285,112 +1228,268 @@ def my_form_open(dialog, layer, feature):
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias field="nb" index="0" name=""/>
+        <alias field="nb" name="" index="0"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default field="nb" expression="" applyOnUpdate="0"/>
+        <default expression="" field="nb" applyOnUpdate="0"/>
       </defaults>
       <constraints>
-        <constraint field="nb" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="nb" notnull_strength="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint field="nb" exp="" desc=""/>
+        <constraint exp="" field="nb" desc=""/>
       </constraintExpressions>
       <attributeactions>
-        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
       </attributeactions>
-      <attributetableconfig sortExpression="" sortOrder="0" actionWidgetStyle="dropDown">
-        <columns>
-          <column type="field" width="-1" hidden="0" name="nb"/>
-          <column type="actions" width="-1" hidden="1"/>
-        </columns>
+      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
+        <columns/>
       </attributetableconfig>
-      <editform>.</editform>
+      <editform></editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath></editforminitfilepath>
-      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
-"""
-Les formulaires QGIS peuvent avoir une fonction Python qui sera appelée à l'ouverture du formulaire.
-
-Utilisez cette fonction pour ajouter plus de fonctionnalités à vos formulaires.
-
-Entrez le nom de la fonction dans le champ "Fonction d'initialisation Python".
-Voici un exemple à suivre:
-"""
-from qgis.PyQt.QtWidgets import QWidget
-
-def my_form_open(dialog, layer, feature):
-    geom = feature.geometry()
-    control = dialog.findChild(QWidget, "MyLineEdit")
-
-]]></editforminitcode>
+      <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <editable>
-        <field editable="1" name="nb"/>
-      </editable>
-      <labelOnTop>
-        <field name="nb" labelOnTop="0"/>
-      </labelOnTop>
+      <editable/>
+      <labelOnTop/>
       <widgets/>
       <conditionalstyles>
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
       <expressionfields/>
-      <previewExpression>nb</previewExpression>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" type="vector" maxScale="0" autoRefreshEnabled="0" geometry="Point" simplifyAlgorithm="0" simplifyMaxScale="1" labelsEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" readOnly="0" simplifyLocal="1" refreshOnNotifyMessage="" simplifyDrawingHints="1" simplifyDrawingTol="1">
+      <extent>
+        <xmin>55.22051850000000428</xmin>
+        <ymin>-21.38296470000000227</ymin>
+        <xmax>55.82547550000000314</xmax>
+        <ymax>-20.87998890000000074</ymax>
+      </extent>
+      <id>Quartiers_c3759090_1613_4714_ae88_14f6e70c84bc</id>
+      <datasource>./Quartiers.shp</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Quartiers</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+        <links/>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="défaut">
+        <map-layer-style name="défaut"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <renderer-v2 type="singleSymbol" enableorderby="0" symbollevels="0" forceraster="0">
+        <symbols>
+          <symbol type="marker" clip_to_extent="1" alpha="1" name="0">
+            <layer enabled="1" locked="0" pass="0" class="SimpleMarker">
+              <prop v="0" k="angle"/>
+              <prop v="162,88,158,255" k="color"/>
+              <prop v="1" k="horizontal_anchor_point"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="circle" k="name"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="35,35,35,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0" k="outline_width"/>
+              <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+              <prop v="MM" k="outline_width_unit"/>
+              <prop v="diameter" k="scale_method"/>
+              <prop v="2" k="size"/>
+              <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+              <prop v="MM" k="size_unit"/>
+              <prop v="1" k="vertical_anchor_point"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" name="name" value=""/>
+                  <Option name="properties"/>
+                  <Option type="QString" name="type" value="collection"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <fieldConfiguration>
+        <field name="osm_id">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="name">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="type">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="population">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias field="osm_id" name="" index="0"/>
+        <alias field="name" name="" index="1"/>
+        <alias field="type" name="" index="2"/>
+        <alias field="population" name="" index="3"/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults>
+        <default expression="" field="osm_id" applyOnUpdate="0"/>
+        <default expression="" field="name" applyOnUpdate="0"/>
+        <default expression="" field="type" applyOnUpdate="0"/>
+        <default expression="" field="population" applyOnUpdate="0"/>
+      </defaults>
+      <constraints>
+        <constraint constraints="0" unique_strength="0" field="osm_id" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="name" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="type" notnull_strength="0" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" field="population" notnull_strength="0" exp_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="osm_id" desc=""/>
+        <constraint exp="" field="name" desc=""/>
+        <constraint exp="" field="type" desc=""/>
+        <constraint exp="" field="population" desc=""/>
+      </constraintExpressions>
+      <attributeactions>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+      </attributeactions>
+      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
+        <columns/>
+      </attributetableconfig>
+      <editform></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <widgets/>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <expressionfields/>
+      <previewExpression></previewExpression>
       <mapTip></mapTip>
     </maplayer>
   </projectlayers>
   <layerorder>
-    <layer id="COMMUNE_76467d87_b775_43b1_9d1b_f8ebc58771ad"/>
-    <layer id="DEPARTEMENT_36dc8e04_d244_497b_a46e_f7900b8c8817"/>
-    <layer id="crete_cbb70c9a_10f8_49fd_882b_b3fe85ceb538"/>
+    <layer id="Quartiers_c3759090_1613_4714_ae88_14f6e70c84bc"/>
+    <layer id="Cretes_39791ae8_e084_4b43_887a_a0a043a356cc"/>
+    <layer id="Communes_10a10d57_2d3e_41d6_af91_486093f28b68"/>
+    <layer id="Contours_bc8e1584_68c7_4ea8_a7c7_c2234c12fb07"/>
   </layerorder>
   <properties>
-    <Measure>
-      <Ellipsoid type="QString">WGS84</Ellipsoid>
-    </Measure>
-    <SpatialRefSys>
-      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
-    </SpatialRefSys>
-    <Measurement>
-      <DistanceUnits type="QString"></DistanceUnits>
-      <AreaUnits type="QString"></AreaUnits>
-    </Measurement>
-    <PositionPrecision>
-      <Automatic type="bool">true</Automatic>
-      <DecimalPlaces type="int">2</DecimalPlaces>
-    </PositionPrecision>
     <Gui>
+      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
       <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
       <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
       <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
       <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
-      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
-      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
-      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
     </Gui>
     <Paths>
       <Absolute type="bool">false</Absolute>
     </Paths>
+    <Measurement>
+      <AreaUnits type="QString"></AreaUnits>
+      <DistanceUnits type="QString"></DistanceUnits>
+    </Measurement>
+    <Measure>
+      <Ellipsoid type="QString">WGS84</Ellipsoid>
+    </Measure>
+    <PAL>
+      <CandidatesLine type="int">50</CandidatesLine>
+      <CandidatesPolygon type="int">30</CandidatesPolygon>
+      <ShowingCandidates type="bool">false</ShowingCandidates>
+      <CandidatesPoint type="int">16</CandidatesPoint>
+      <ShowingAllLabels type="bool">false</ShowingAllLabels>
+      <ShowingPartialsLabels type="bool">true</ShowingPartialsLabels>
+      <DrawOutlineLabels type="bool">true</DrawOutlineLabels>
+      <SearchMethod type="int">0</SearchMethod>
+      <DrawRectOnly type="bool">false</DrawRectOnly>
+    </PAL>
+    <PositionPrecision>
+      <Automatic type="bool">true</Automatic>
+      <DecimalPlaces type="int">2</DecimalPlaces>
+    </PositionPrecision>
+    <SpatialRefSys>
+      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+    </SpatialRefSys>
     <Legend>
       <filterByMap type="bool">false</filterByMap>
     </Legend>
-    <PAL>
-      <CandidatesLine type="int">50</CandidatesLine>
-      <DrawOutlineLabels type="bool">true</DrawOutlineLabels>
-      <ShowingAllLabels type="bool">false</ShowingAllLabels>
-      <SearchMethod type="int">0</SearchMethod>
-      <ShowingCandidates type="bool">false</ShowingCandidates>
-      <DrawRectOnly type="bool">false</DrawRectOnly>
-      <ShowingPartialsLabels type="bool">true</ShowingPartialsLabels>
-      <CandidatesPoint type="int">16</CandidatesPoint>
-      <CandidatesPolygon type="int">30</CandidatesPolygon>
-    </PAL>
   </properties>
   <visibility-presets/>
   <transformContext/>
