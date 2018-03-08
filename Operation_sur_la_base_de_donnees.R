@@ -42,7 +42,7 @@ dir.create(path = "Moyennes")
 setwd(dir = "Moyennes")
 
 
-# ---- Operation sur la base de donnees ----
+# ---- Operations sur la base de donnees ----
 setwd(dir = "~/Base de données/")
 
 for (j in seq(1,12)) {
@@ -181,14 +181,55 @@ for (j in seq(1,12)) {
   moy_SL_D <- mean(x = list_SL_D)
   moy_SP_D <- mean(x = list_SP_D)
   
+  # Ecart-type
+  ET_LP_G <- sd(x = list_LP_G)
+  ET_MBDN_G <- sd(x = list_MBDN_G)
+  ET_SA_G <- sd(x = list_SA_G)
+  ET_SL_G <- sd(x = list_SL_G)
+  ET_SP_G <- sd(x = list_SP_G)
+  ET_LP_D <- sd(x = list_LP_D)
+  ET_MBDN_D <- sd(x = list_MBDN_D)
+  ET_SA_D <- sd(x = list_SA_D)
+  ET_SL_D <- sd(x = list_SL_D)
+  ET_SP_D <- sd(x = list_SP_D)
+  
+  # Valeur min et max
+  min_LP_G <- min(x = list_LP_G)
+  min_MBDN_G <- min(x = list_MBDN_G)
+  min_SA_G <- min(x = list_SA_G)
+  min_SL_G <- min(x = list_SL_G)
+  min_SP_G <- min(x = list_SP_G)
+  min_LP_D <- min(x = list_LP_D)
+  min_MBDN_D <- min(x = list_MBDN_D)
+  min_SA_D <- min(x = list_SA_D)
+  min_SL_D <- min(x = list_SL_D)
+  min_SP_D <- min(x = list_SP_D)
+  max_LP_G <- max(x = list_LP_G)
+  max_MBDN_G <- max(x = list_MBDN_G)
+  max_SA_G <- max(x = list_SA_G)
+  max_SL_G <- max(x = list_SL_G)
+  max_SP_G <- max(x = list_SP_G)
+  max_LP_D <- max(x = list_LP_D)
+  max_MBDN_D <- max(x = list_MBDN_D)
+  max_SA_D <- max(x = list_SA_D)
+  max_SL_D <- max(x = list_SL_D)
+  max_SP_D <- max(x = list_SP_D)
+  
   # Ecriture dans un fichier externe
+  # Moyenne
   setwd(dir = "~/Base de données/Moyennes")
-  Moy_G <- c(moy_LP_G, moy_MBDN_G, moy_SA_G, moy_SL_G, moy_SP_G)
-  Moy_D <- c(moy_LP_D, moy_MBDN_D, moy_SA_D, moy_SL_D, moy_SP_D)
-  Moy_G <- as.data.frame(x = Moy_G)
-  Moy_D <- as.data.frame(x = Moy_D)
-  fusion <- c(Moy_G, Moy_D)
-  write.table(x = fusion, file = paste("Moy_Ray_Global_", mois[j], ".txt", sep = ""), col.names = TRUE)
+  Moy_G <- as.data.frame(x =c(moy_LP_G, moy_MBDN_G, moy_SA_G, moy_SL_G, moy_SP_G))
+  Moy_D <- as.data.frame(x =c(moy_LP_D, moy_MBDN_D, moy_SA_D, moy_SL_D, moy_SP_D))
+  fusion_1 <- c(Moy_G, Moy_D)
+  write.table(x = fusion_1, file = paste("Moy_Ray_G_D", mois[j], ".txt", sep = ""), col.names = TRUE)
+  # Ecart-type, min et max
+  LP <- as.data.frame(x = c(min_LP_G, ET_LP_G, max_LP_G, min_LP_D, ET_LP_D, max_LP_D))
+  MBDN <- as.data.frame(x = c(min_MBDN_G, ET_MBDN_G, max_MBDN_G, min_MBDN_D, ET_MBDN_D, max_MBDN_D))
+  SA <- as.data.frame(x = c(min_SA_G, ET_SA_G, max_SA_G, min_SA_D, ET_SA_D, max_SA_D))
+  SL <- as.data.frame(x = c(min_SL_G, ET_SL_G, max_SL_G, min_SL_D, ET_SL_D, max_SL_D))
+  SP <- as.data.frame(x = c(min_SP_G, ET_SP_G, max_SP_G, min_SP_D, ET_SP_D, max_SP_D))
+  fusion_2 <- c(LP, MBDN, SA, SL, SP)
+  write.table(x = fusion_2, file = paste("Min_Ecart-type_max_G_D", mois[j], ".txt", sep = ""), col.names = TRUE)
   
   # Remise à zero des variables utilisees
   Donnees_LP_G <- 0
