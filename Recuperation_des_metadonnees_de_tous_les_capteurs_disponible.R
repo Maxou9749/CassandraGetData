@@ -4,7 +4,7 @@
 #                        13/03/2018
 
 
-# Chargement de la library rLE2P
+# ---- Chargement de la library rLE2P ----
 library(rLE2P)
 
 
