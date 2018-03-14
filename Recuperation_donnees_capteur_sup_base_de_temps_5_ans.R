@@ -34,7 +34,7 @@ for (j in seq(2012,2018)) {
     an <- j
     if (moi < 10) {moi <- paste(0, moi, sep ="")} else {moi <- paste(moi)}
     date_d <- paste(an, moi, "01", sep = "-")
-    date_d <- paste(date_d, "00:01:00", sep = " ")
+    date_d <- paste(date_d, "00:00:00", sep = " ")
     jour <- jr_mois[i]
     date_f <- paste(an, moi, as.character(jour), sep = "-")
     date_f <- paste(date_f,"23:59:00", sep = " ")

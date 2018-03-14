@@ -3,11 +3,15 @@
 #     Operation sur la base de donnees
 #                 21/02/2018
 
+library(suncalc)
+library(lubridate)
 
 heure_lim_inf <- 6
 heure_lim_sup <- 20
 
 # ---- Definition des variables utilisees ----
+L <- -21.06          # Latitude
+l <- 55.31           # Longitude
 jr_mois <- c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 mois <- c("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre")
 annee <- c("2012", "2013", "2014", "2015", "2016", "2017","2018")
@@ -63,7 +67,44 @@ for (j in seq(1,12)) {
       lecture_list_SL_D <- read.table(file = "Diffus_Saint_Leu.txt", sep = ";")
       lecture_list_SP_D <- read.table(file = "Diffus_Saint_Pierre.txt", sep = ";")
       
-      # Omission des valeurs de rayonnement en fonction de l'heure
+      
+      
+      # Mise en place de la verif pour chaque jour
+      date_prec <- as.Date(substr(x = lecture_list_LP_G$date[1], 1, 10))
+      k = 1
+      sunrise <- 0
+      sunset <- 0
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_LP_G$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            break()
+          }
+          k <- k + 1
+        }
+      }
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      k <- k - 1 # Enlever la dernière itération de STOP auto
+      for (l in seq(1, jr_mois[j])) {
+        
+      }
+      
+      
+      
+      
+      
+      
+      
+      # Omission des valeurs de rayonnement en fonction de l'heure du lever et coucher du soleil
+      
       for (k in seq(1,nrow(lecture_list_LP_G))) {
         A <- as.numeric(substring(lecture_list_LP_G$date[k], 12, 13))
         if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
@@ -154,7 +195,7 @@ for (j in seq(1,12)) {
       }
       omit_list_SP_D <- na.omit(lecture_list_SP_D$value)
       
-      # Mémoire
+      # Mémoire (accumulation des informations dans une variable)
       list_LP_G <- c(list_LP_G, omit_list_LP_G)
       list_MBDN_G <- c(list_MBDN_G,omit_list_MBDN_G)
       list_SA_G <- c(list_SA_G,omit_list_SA_G)
@@ -165,6 +206,7 @@ for (j in seq(1,12)) {
       list_SA_D <- c(list_SA_D,omit_list_SA_D)
       list_SL_D <- c(list_SL_D,omit_list_SL_D)
       list_SP_D <- c(list_SP_D,omit_list_SP_D)
+      
       setwd(dir = "~/Base de données/")
     }
     setwd(dir = "~/Base de données/")
