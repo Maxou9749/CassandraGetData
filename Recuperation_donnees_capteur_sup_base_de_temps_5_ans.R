@@ -4,11 +4,11 @@
 #                                 21/02/2018
 
 
-# Chargement de la library rLE2P
+# ---- Chargement de la library rLE2P ----
 library(rLE2P)
 
 
-# ---- Définition des variables utilisees ----
+# ---- Definition des variables utilisees ----
 Ray_D <- "FD_Avg"
 Ray_G <- "FG_Avg"
 
@@ -24,7 +24,8 @@ jr_mois <- c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 mois <- c("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre")
 annee <- c("2012", "2013", "2014", "2015", "2016", "2017","2018")
 
-# ---- Création des temps de début et de fin ----
+
+# ---- Création de la matrice de temps de debut et de fin ----
 time_d <- matrix(nrow = 12, ncol = 7)
 time_f <- matrix(nrow = 12, ncol = 7)
 
@@ -77,9 +78,10 @@ for (j in seq(1,12)) {
   for (i in seq(1,7)) {
     setwd(dir = "~/Base de données")
     setwd(dir = annee[i])
+    # Si le mois n'existe pas, passer au mois suivant etc .
     if (dir.exists(mois[j]) == FALSE) {} else {
       setwd(dir = mois[j])
-      # Global
+      # ---- Global ----
       G_SL <- CassandraGetData(idTransaction = Liste_tr[1], idSensor = Ray_G, timeStart = time_d[j,i], timeEnd = time_f[j,i])
       write.table(G_SL, "Global_Saint_Leu.txt", sep=";")
       G_SL <- read.table("Global_Saint_Leu.txt", sep=";")
@@ -110,7 +112,7 @@ for (j in seq(1,12)) {
       G_LP <- na.omit(object = G_LP)
       write.table(G_LP, "Global_La_Possession.txt", sep=";")
       
-      # Diffus
+      # ---- Diffus ----
       D_SL <- CassandraGetData(idTransaction = Liste_tr[1], idSensor = Ray_D, timeStart = time_d[j,i], timeEnd = time_f[j,i])
       write.table(D_SL, "Diffus_Saint_Leu.txt", sep=";")
       D_SL <- read.table("Diffus_Saint_Leu.txt", sep=";")
