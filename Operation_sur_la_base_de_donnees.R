@@ -1,13 +1,12 @@
 
 #               Maxime ROUSSEAU
 #     Operation sur la base de donnees
-#                 21/02/2018
+#                 14/03/2018
 
+# ---- Chargement des librairies ----
 library(suncalc)
 library(lubridate)
 
-heure_lim_inf <- 6
-heure_lim_sup <- 20
 
 # ---- Definition des variables utilisees ----
 L <- -21.06          # Latitude
@@ -54,8 +53,7 @@ for (j in seq(1,12)) {
     setwd(dir = annee[i])
     if (dir.exists(mois[j]) == FALSE) {} else {
       setwd(dir = mois[j])
-      
-      # Lecture des fichiers des mois de novembre de 2012 à 2018
+      # ---- Lecture des fichiers de donnees du mois et de l'annee correspondant ----
       lecture_list_LP_G <- read.table(file = "Global_La_Possession.txt", sep = ";")
       lecture_list_MBDN_G <- read.table(file = "Global_Moufia_BDN.txt", sep = ";")
       lecture_list_SA_G <- read.table(file = "Global_Saint_Andre.txt", sep = ";")
@@ -68,134 +66,540 @@ for (j in seq(1,12)) {
       lecture_list_SP_D <- read.table(file = "Diffus_Saint_Pierre.txt", sep = ";")
       
       
-      
-      # Mise en place de la verif pour chaque jour
-      date_prec <- as.Date(substr(x = lecture_list_LP_G$date[1], 1, 10))
-      k = 1
+      # ---- Omission des valeurs de rayonnement en fonction de l'heure du lever et coucher du soleil ----
+      # ---- La Possession ----
+        # ---- Global ----
+      # Initialisation des variables
       sunrise <- 0
       sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_LP_G$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
       Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
       sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
       sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
       repeat{
         repeat{
           date_suiv <- as.Date(substr(x = lecture_list_LP_G$date[k], 1, 10))
           if (date_prec < date_suiv) {
             date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
             Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
             sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
             sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
             break()
           }
           k <- k + 1
         }
       }
+      # Suppression des NA
+      save_k <- na.omit(save_k)
       sunrise <- na.omit(object = sunrise)
       sunset <- na.omit(object = sunset)
-      k <- k - 1 # Enlever la dernière itération de STOP auto
-      for (l in seq(1, jr_mois[j])) {
-        
-      }
-      
-      
-      
-      
-      
-      
-      
-      # Omission des valeurs de rayonnement en fonction de l'heure du lever et coucher du soleil
-      
-      for (k in seq(1,nrow(lecture_list_LP_G))) {
-        A <- as.numeric(substring(lecture_list_LP_G$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_LP_G$date[k] <- NA
-          lecture_list_LP_G$value[k] <- NA
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_LP_G$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_LP_G$date[o] <- NA
+            lecture_list_LP_G$value[o] <- NA
+          }
         }
       }
-      omit_list_LP_G <- na.omit(lecture_list_LP_G$value)
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_LP_G <- na.omit(lecture_list_LP_G)
       
-      for (k in seq(1,nrow(lecture_list_MBDN_G))) {
-        A <- as.numeric(substring(lecture_list_MBDN_G$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_MBDN_G$date[k] <- NA
-          lecture_list_MBDN_G$value[k] <- NA
+        # ---- Diffus ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_LP_D$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_LP_D$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
         }
       }
-      omit_list_MBDN_G <- na.omit(lecture_list_MBDN_G$value)
-      
-      for (k in seq(1,nrow(lecture_list_SA_G))) {
-        A <- as.numeric(substring(lecture_list_SA_G$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_SA_G$date[k] <- NA
-          lecture_list_SA_G$value[k] <- NA
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_LP_D$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_LP_D$date[o] <- NA
+            lecture_list_LP_D$value[o] <- NA
+          }
         }
       }
-      omit_list_SA_G <- na.omit(lecture_list_SA_G$value)
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_LP_D <- na.omit(lecture_list_LP_D)
       
-      for (k in seq(1,nrow(lecture_list_SL_G))) {
-        A <- as.numeric(substring(lecture_list_SL_G$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_SL_G$date[k] <- NA
-          lecture_list_SL_G$value[k] <- NA
+      
+      # ---- Moufia Bois de Nefle ----
+        # ---- Global ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_MBDN_G$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_MBDN_G$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
         }
       }
-      omit_list_SL_G <- na.omit(lecture_list_SL_G$value)
-      
-      for (k in seq(1,nrow(lecture_list_SP_G))) {
-        A <- as.numeric(substring(lecture_list_SP_G$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_SP_G$date[k] <- NA
-          lecture_list_SP_G$value[k] <- NA
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_MBDN_G$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_MBDN_G$date[o] <- NA
+            lecture_list_MBDN_G$value[o] <- NA
+          }
         }
       }
-      omit_list_SP_G <- na.omit(lecture_list_SP_G$value)
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_MBDN_G <- na.omit(lecture_list_MBDN_G)
       
-      for (k in seq(1,nrow(lecture_list_LP_D))) {
-        A <- as.numeric(substring(lecture_list_LP_D$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_LP_D$date[k] <- NA
-          lecture_list_LP_D$value[k] <- NA
+      
+        # ---- Diffus ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_MBDN_D$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_MBDN_D$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
         }
       }
-      omit_list_LP_D <- na.omit(lecture_list_LP_D$value)
-      
-      for (k in seq(1,nrow(lecture_list_MBDN_D))) {
-        A <- as.numeric(substring(lecture_list_MBDN_D$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_MBDN_D$date[k] <- NA
-          lecture_list_MBDN_D$value[k] <- NA
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_MBDN_D$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_MBDN_D$date[o] <- NA
+            lecture_list_MBDN_D$value[o] <- NA
+          }
         }
       }
-      omit_list_MBDN_D <- na.omit(lecture_list_MBDN_D$value)
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_MBDN_D <- na.omit(lecture_list_MBDN_D)
       
-      for (k in seq(1,nrow(lecture_list_SA_D))) {
-        A <- as.numeric(substring(lecture_list_SA_D$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_SA_D$date[k] <- NA
-          lecture_list_SA_D$value[k] <- NA
+      
+      # ---- Saint Andre ----
+        # ---- Global ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_SA_G$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_SA_G$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
         }
       }
-      omit_list_SA_D <- na.omit(lecture_list_SA_D$value)
-      
-      for (k in seq(1,nrow(lecture_list_SL_D))) {
-        A <- as.numeric(substring(lecture_list_SL_D$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_SL_D$date[k] <- NA
-          lecture_list_SL_D$value[k] <- NA
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_SA_G$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_SA_G$date[o] <- NA
+            lecture_list_SA_G$value[o] <- NA
+          }
         }
       }
-      omit_list_SL_D <- na.omit(lecture_list_SL_D$value)
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_SA_G <- na.omit(lecture_list_SA_G)
       
-      for (k in seq(1,nrow(lecture_list_SP_D))) {
-        A <- as.numeric(substring(lecture_list_SP_D$date[k], 12, 13))
-        if ((A > heure_lim_sup) || (A < heure_lim_inf)) {
-          lecture_list_SP_D$date[k] <- NA
-          lecture_list_SP_D$value[k] <- NA
+        # ---- Diffus ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_SA_D$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_SA_D$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
         }
       }
-      omit_list_SP_D <- na.omit(lecture_list_SP_D$value)
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_SA_D$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_SA_D$date[o] <- NA
+            lecture_list_SA_D$value[o] <- NA
+          }
+        }
+      }
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_SA_D <- na.omit(lecture_list_SA_D)
       
-      # Mémoire (accumulation des informations dans une variable)
+      
+      # ---- Saint Leu ----
+        # ---- Global ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_SL_G$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_SL_G$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
+        }
+      }
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_SL_G$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_SL_G$date[o] <- NA
+            lecture_list_SL_G$value[o] <- NA
+          }
+        }
+      }
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_SL_G <- na.omit(lecture_list_SL_G)
+      
+      
+        # ---- Diffus ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_SL_D$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_SL_D$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
+        }
+      }
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_SL_D$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_SL_D$date[o] <- NA
+            lecture_list_SL_D$value[o] <- NA
+          }
+        }
+      }
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_SL_D <- na.omit(lecture_list_SL_D)
+      
+      # ---- Saint Pierre ----
+        # ---- Global ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_SP_G$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_SP_G$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
+        }
+      }
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_SP_G$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_SP_G$date[o] <- NA
+            lecture_list_SP_G$value[o] <- NA
+          }
+        }
+      }
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_SP_G <- na.omit(lecture_list_SP_G)
+      
+      
+        # ---- Diffus ----
+      # Initialisation des variables
+      sunrise <- 0
+      sunset <- 0
+      save_k <- 1
+      # Initialisation de la premiere date
+      date_prec <- as.Date(substr(x = lecture_list_SP_D$date[1], 1, 10))
+      k = 1
+      # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+      Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+      # Ajout de (4 * 3600), car nous sommes à UTC+04
+      sunrise[1] <- as.character(Sun_Time$sunrise + 4 * 3600)
+      sunset[1] <- as.character(Sun_Time$sunset + 4 * 3600)
+      # Tant qu'on ne change pas de jour ne rien faire sinon stocker la valeur k, sunset et sunrise
+      repeat{
+        repeat{
+          date_suiv <- as.Date(substr(x = lecture_list_SP_D$date[k], 1, 10))
+          if (date_prec < date_suiv) {
+            date_prec <- date_suiv
+            # Calcul de l'heure de lever (sunrise) et coucher (sunset) du soleil
+            Sun_Time <- getSunlightTimes(date = date_prec, lat = L, lon = l, keep = c("sunrise", "sunset"))
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunrise[k] <- as.character(Sun_Time$sunrise + 4 * 3600)
+            # Ajout de (4 * 3600), car nous sommes à UTC+04
+            sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
+            # Stockage de la variable k (representation du changement de jour)
+            save_k[k] <- k
+            # Arret
+            break()
+          }
+          k <- k + 1
+        }
+      }
+      # Suppression des NA
+      save_k <- na.omit(save_k)
+      sunrise <- na.omit(object = sunrise)
+      sunset <- na.omit(object = sunset)
+      # Enlever la dernière itération de STOP auto (cette boucle s'arrete d'elle même mais applique "k <- k + 1" avant)
+      k <- k - 1 
+      # Balayage des heures de toutes la journee de tous les jours pour eliminer les heures et valeurs en dehors des heures ou le soleil n'est plus
+      for (m in seq(1,length(save_k))) {
+        for (o in seq(save_k[m],save_k[m+1]-1)) {
+          verif <- as.character(lecture_list_SP_D$date[o])
+          if ((verif < sunrise[m]) || (verif > sunset[m])) {
+            lecture_list_SP_D$date[o] <- NA
+            lecture_list_SP_D$value[o] <- NA
+          }
+        }
+      }
+      # Elimination des NA pour avoir un stockage propre
+      lecture_list_SP_D <- na.omit(lecture_list_SP_D)
+      
+      
+      # ---- Mémoire (accumulation des informations dans une variable) ----
       list_LP_G <- c(list_LP_G, omit_list_LP_G)
       list_MBDN_G <- c(list_MBDN_G,omit_list_MBDN_G)
       list_SA_G <- c(list_SA_G,omit_list_SA_G)
@@ -211,7 +615,7 @@ for (j in seq(1,12)) {
     }
     setwd(dir = "~/Base de données/")
   }
-  # Moyenne
+  # ---- Moyenne ----
   moy_LP_G <- mean(x = list_LP_G)
   moy_MBDN_G <- mean(x = list_MBDN_G)
   moy_SA_G <- mean(x = list_SA_G)
@@ -223,7 +627,7 @@ for (j in seq(1,12)) {
   moy_SL_D <- mean(x = list_SL_D)
   moy_SP_D <- mean(x = list_SP_D)
   
-  # Ecart-type
+  # ---- Ecart-type ----
   ET_LP_G <- sd(x = list_LP_G)
   ET_MBDN_G <- sd(x = list_MBDN_G)
   ET_SA_G <- sd(x = list_SA_G)
@@ -235,7 +639,7 @@ for (j in seq(1,12)) {
   ET_SL_D <- sd(x = list_SL_D)
   ET_SP_D <- sd(x = list_SP_D)
   
-  # Valeur min et max
+  # ---- Valeur min et max ----
   min_LP_G <- min(x = list_LP_G)
   min_MBDN_G <- min(x = list_MBDN_G)
   min_SA_G <- min(x = list_SA_G)
@@ -257,23 +661,23 @@ for (j in seq(1,12)) {
   max_SL_D <- max(x = list_SL_D)
   max_SP_D <- max(x = list_SP_D)
   
-  # Ecriture dans un fichier externe
+  # ---- Ecriture dans un fichier externe ----
   # Moyenne
   setwd(dir = "~/Base de données/Moyennes")
   Moy_G <- as.data.frame(x =c(moy_LP_G, moy_MBDN_G, moy_SA_G, moy_SL_G, moy_SP_G))
   Moy_D <- as.data.frame(x =c(moy_LP_D, moy_MBDN_D, moy_SA_D, moy_SL_D, moy_SP_D))
   fusion_1 <- c(Moy_G, Moy_D)
   write.table(x = fusion_1, file = paste("Moy_Ray_G_D", mois[j], ".txt", sep = ""), col.names = TRUE)
-  # Ecart-type, min et max
+  # Min, Ecart-Type et max
   LP <- as.data.frame(x = c(min_LP_G, ET_LP_G, max_LP_G, min_LP_D, ET_LP_D, max_LP_D))
   MBDN <- as.data.frame(x = c(min_MBDN_G, ET_MBDN_G, max_MBDN_G, min_MBDN_D, ET_MBDN_D, max_MBDN_D))
   SA <- as.data.frame(x = c(min_SA_G, ET_SA_G, max_SA_G, min_SA_D, ET_SA_D, max_SA_D))
   SL <- as.data.frame(x = c(min_SL_G, ET_SL_G, max_SL_G, min_SL_D, ET_SL_D, max_SL_D))
   SP <- as.data.frame(x = c(min_SP_G, ET_SP_G, max_SP_G, min_SP_D, ET_SP_D, max_SP_D))
   fusion_2 <- c(LP, MBDN, SA, SL, SP)
-  write.table(x = fusion_2, file = paste("Min_Ecart-type_max_G_D", mois[j], ".txt", sep = ""), col.names = TRUE)
+  write.table(x = fusion_2, file = paste("Min_Ecart-type_Max_Global_et_Diffus", mois[j], ".txt", sep = ""), col.names = TRUE)
   
-  # Remise à zero des variables utilisees
+  # ---- Remise à zero des variables utilisees ----
   Donnees_LP_G <- 0
   Donnees_MBDN_G <- 0
   Donnees_SA_G <- 0
