@@ -13,6 +13,7 @@ L <- -21.06          # Latitude
 l <- 55.31           # Longitude
 jr_mois <- c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 mois <- c("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre")
+mois_ch <- c("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
 annee <- c("2012", "2013", "2014", "2015", "2016", "2017","2018")
 Liste_lieu <- c("La Possession", "Moufia Bois de Nèfle", "Saint Andre", "Saint Leu", "Saint Pierre")
 Abrv_lieu <- c("LP_G", "MBDN_G", "SA_G", "SL_G", "SP_G", "LP_D", "MBDN_D", "SA_D", "SL_D", "SP_D")
@@ -658,16 +659,16 @@ for (j in seq(1,12)) {
       
       
       # ---- Mémoire (accumulation des informations dans une variable) ----
-      list_LP_G <- c(list_LP_G, omit_list_LP_G)
-      list_MBDN_G <- c(list_MBDN_G,omit_list_MBDN_G)
-      list_SA_G <- c(list_SA_G,omit_list_SA_G)
-      list_SL_G <- c(list_SL_G,omit_list_SL_G)
-      list_SP_G <- c(list_SP_G,omit_list_SP_G)
-      list_LP_D <- c(list_LP_D,omit_list_LP_D)
-      list_MBDN_D <- c(list_MBDN_D,omit_list_MBDN_D)
-      list_SA_D <- c(list_SA_D,omit_list_SA_D)
-      list_SL_D <- c(list_SL_D,omit_list_SL_D)
-      list_SP_D <- c(list_SP_D,omit_list_SP_D)
+      list_LP_G <- c(list_LP_G, lecture_list_LP_G)
+      list_MBDN_G <- c(list_MBDN_G,lecture_list_MBDN_G)
+      list_SA_G <- c(list_SA_G,lecture_list_SA_G)
+      list_SL_G <- c(list_SL_G,lecture_list_SL_G)
+      list_SP_G <- c(list_SP_G,lecture_list_SP_G)
+      list_LP_D <- c(list_LP_D,lecture_list_LP_D)
+      list_MBDN_D <- c(list_MBDN_D,lecture_list_MBDN_D)
+      list_SA_D <- c(list_SA_D,lecture_list_SA_D)
+      list_SL_D <- c(list_SL_D,lecture_list_SL_D)
+      list_SP_D <- c(list_SP_D,lecture_list_SP_D)
       
       setwd(dir = "~/Base de données/")
     }
