@@ -214,8 +214,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          A <- length(lecture_list_LP_G$date)
-          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
+          A <- length(lecture_list_MBDN_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_MBDN_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -274,8 +274,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          A <- length(lecture_list_LP_G$date)
-          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
+          A <- length(lecture_list_MBDN_D$date)
+          if (date_prec == as.Date(substr(x = lecture_list_MBDN_D$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -335,8 +335,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          A <- length(lecture_list_LP_G$date)
-          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
+          A <- length(lecture_list_SA_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SA_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -394,8 +394,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          A <- length(lecture_list_LP_G$date)
-          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
+          A <- length(lecture_list_SA_D$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SA_D$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -455,8 +455,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          A <- length(lecture_list_LP_G$date)
-          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
+          A <- length(lecture_list_SL_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SL_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -514,8 +514,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          A <- length(lecture_list_LP_G$date)
-          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
+          A <- length(lecture_list_SL_D$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SL_D$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -575,8 +575,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          A <- length(lecture_list_LP_G$date)
-          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
+          A <- length(lecture_list_SP_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SP_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -634,8 +634,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          A <- length(lecture_list_LP_G$date)
-          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
+          A <- length(lecture_list_SP_D$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SP_D$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
