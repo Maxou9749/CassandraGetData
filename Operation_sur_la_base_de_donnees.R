@@ -1,7 +1,7 @@
 
 #               Maxime ROUSSEAU
 #     Operation sur la base de donnees
-#                 16/03/2018
+#                 19/03/2018
 
 # ---- Chargement des librairies ----
 library(suncalc)
@@ -14,7 +14,7 @@ l <- 55.31           # Longitude
 jr_mois <- c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 mois <- c("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre")
 mois_ch <- c("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
-annee <- c("2012", "2013", "2014", "2015", "2016", "2017","2018")
+annee <- c("2012", "2013", "2014", "2015", "2016", "2017", "2018")
 Liste_lieu <- c("La Possession", "Moufia Bois de Nèfle", "Saint Andre", "Saint Leu", "Saint Pierre")
 Abrv_lieu <- c("LP_G", "MBDN_G", "SA_G", "SL_G", "SP_G", "LP_D", "MBDN_D", "SA_D", "SL_D", "SP_D")
 Donnees_LP_G <- 0
@@ -95,7 +95,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_LP_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -153,7 +154,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_LP_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_LP_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -212,7 +214,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_MBDN_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_MBDN_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -271,7 +274,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_MBDN_D$date)
+          if (date_prec == as.Date(substr(x = lecture_list_MBDN_D$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -331,7 +335,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_SA_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SA_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -389,7 +394,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_SA_D$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SA_D$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -449,7 +455,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_SL_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SL_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -507,7 +514,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_SL_D$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SL_D$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -567,7 +575,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_SP_G$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SP_G$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -625,7 +634,8 @@ for (j in seq(1,12)) {
           sunset[k] <- as.character(Sun_Time$sunset + 4 * 3600)
           # Stockage de la variable k (representation du changement de jour)
           save_k[k] <- k
-          if (date_prec == paste(annee[i], "-", mois_ch[j], "-", jr_mois[j], sep = "")) {break()}
+          A <- length(lecture_list_SP_D$date)
+          if (date_prec == as.Date(substr(x = lecture_list_SP_D$date[A], 1, 10))) {break()}
         }
         k <- k + 1
       }
@@ -659,16 +669,16 @@ for (j in seq(1,12)) {
       
       
       # ---- Mémoire (accumulation des informations dans une variable) ----
-      list_LP_G <- c(list_LP_G, lecture_list_LP_G)
-      list_MBDN_G <- c(list_MBDN_G,lecture_list_MBDN_G)
-      list_SA_G <- c(list_SA_G,lecture_list_SA_G)
-      list_SL_G <- c(list_SL_G,lecture_list_SL_G)
-      list_SP_G <- c(list_SP_G,lecture_list_SP_G)
-      list_LP_D <- c(list_LP_D,lecture_list_LP_D)
-      list_MBDN_D <- c(list_MBDN_D,lecture_list_MBDN_D)
-      list_SA_D <- c(list_SA_D,lecture_list_SA_D)
-      list_SL_D <- c(list_SL_D,lecture_list_SL_D)
-      list_SP_D <- c(list_SP_D,lecture_list_SP_D)
+      list_LP_G <- c(list_LP_G, lecture_list_LP_G$value)
+      list_MBDN_G <- c(list_MBDN_G,lecture_list_MBDN_G$value)
+      list_SA_G <- c(list_SA_G,lecture_list_SA_G$value)
+      list_SL_G <- c(list_SL_G,lecture_list_SL_G$value)
+      list_SP_G <- c(list_SP_G,lecture_list_SP_G$value)
+      list_LP_D <- c(list_LP_D,lecture_list_LP_D$value)
+      list_MBDN_D <- c(list_MBDN_D,lecture_list_MBDN_D$value)
+      list_SA_D <- c(list_SA_D,lecture_list_SA_D$value)
+      list_SL_D <- c(list_SL_D,lecture_list_SL_D$value)
+      list_SP_D <- c(list_SP_D,lecture_list_SP_D$value)
       
       setwd(dir = "~/Base de données/")
     }
@@ -726,7 +736,7 @@ for (j in seq(1,12)) {
   Moy_G <- as.data.frame(x =c(moy_LP_G, moy_MBDN_G, moy_SA_G, moy_SL_G, moy_SP_G))
   Moy_D <- as.data.frame(x =c(moy_LP_D, moy_MBDN_D, moy_SA_D, moy_SL_D, moy_SP_D))
   fusion_1 <- c(Moy_G, Moy_D)
-  write.table(x = fusion_1, file = paste("Moy_Ray_G_D", mois[j], ".txt", sep = ""), col.names = TRUE)
+  write.table(x = fusion_1, file = paste(mois[j],"moy_Ray_G_D_", ".txt", sep = ""), col.names = TRUE)
   # Min, Ecart-Type et max
   LP <- as.data.frame(x = c(min_LP_G, ET_LP_G, max_LP_G, min_LP_D, ET_LP_D, max_LP_D))
   MBDN <- as.data.frame(x = c(min_MBDN_G, ET_MBDN_G, max_MBDN_G, min_MBDN_D, ET_MBDN_D, max_MBDN_D))
@@ -734,7 +744,7 @@ for (j in seq(1,12)) {
   SL <- as.data.frame(x = c(min_SL_G, ET_SL_G, max_SL_G, min_SL_D, ET_SL_D, max_SL_D))
   SP <- as.data.frame(x = c(min_SP_G, ET_SP_G, max_SP_G, min_SP_D, ET_SP_D, max_SP_D))
   fusion_2 <- c(LP, MBDN, SA, SL, SP)
-  write.table(x = fusion_2, file = paste("Min_Ecart-type_Max_Global_et_Diffus", mois[j], ".txt", sep = ""), col.names = TRUE)
+  write.table(x = fusion_2, file = paste(mois[j], "min_Ecart-type_Max_Global_et_Diffus_", ".txt", sep = ""), col.names = TRUE)
   
   # ---- Remise à zero des variables utilisees ----
   Donnees_LP_G <- 0
